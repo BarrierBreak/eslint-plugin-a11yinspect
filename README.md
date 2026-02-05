@@ -2,7 +2,7 @@
 
 > ESLint plugin for comprehensive static accessibility analysis
 
-[![npm version](https://img.shields.io/npm/v/eslint-plugin-a11yinspect.svg)](https://www.npmjs.com/package/eslint-plugin-a11yinspect)
+[![npm version](https://img.shields.io/npm/v/@barrierbreak/eslint-plugin-a11yinspect.svg)](https://www.npmjs.com/package/@barrierbreak/eslint-plugin-a11yinspect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Static accessibility analysis for React/JSX with **66 rules** covering WCAG guidelines. Catch accessibility issues at development time with zero runtime overhead.
@@ -35,7 +35,7 @@ Together, these tools give developers a practical, approachable way to begin bui
 ## Installation
 
 ```bash
-npm install eslint-plugin-a11yinspect --save-dev
+npm install @barrierbreak/eslint-plugin-a11yinspect --save-dev
 ```
 
 ## Quick Start
@@ -44,7 +44,7 @@ npm install eslint-plugin-a11yinspect --save-dev
 
 ```javascript
 // eslint.config.mjs
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 
 export default [
   {
@@ -438,7 +438,7 @@ This plugin checks **JSX/TSX files only**. For other template formats, see:
 
 ```javascript
 // eslint.config.mjs
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 
 export default [
   {
@@ -458,7 +458,7 @@ export default [
 
 ```javascript
 // eslint.config.mjs
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 
 export default [
   {
@@ -476,7 +476,7 @@ export default [
 
 ```javascript
 // eslint.config.mjs
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 import tsParser from "@typescript-eslint/parser";
 
 export default [
@@ -533,7 +533,7 @@ jobs:
 Make sure the plugin is installed in the project where ESLint is running:
 
 ```bash
-npm install eslint-plugin-a11yinspect --save-dev
+npm install @barrierbreak/eslint-plugin-a11yinspect --save-dev
 ```
 
 **ESLint not recognizing JSX**
