@@ -1,0 +1,62 @@
+module.exports = {
+  meta: {
+    type: "problem",
+    docs: {
+      description: "Accessibility checks for menu elements",
+      category: "Accessibility",
+      recommended: true
+    },
+    messages: {
+      menuMissingAccessibleName: "❌ menu missing accessible name",
+      menuContainMenuitemElements: "⚠️ menu should contain menuitem elements"
+    },
+    schema: []
+  },
+  create(context) {
+    function hasMenuitems(children) {
+      return children.some(child => {
+        if (child.type === "JSXElement") {
+          const roleAttr = child.openingElement.attributes.find(
+            attr => attr.type === "JSXAttribute" && attr.name.name === "role"
+          );
+          
+          if (roleAttr && roleAttr.value && roleAttr.value.type === "Literal") {
+            const role = roleAttr.value.value;
+            return role === "menuitem" || role === "menuitemcheckbox" || role === "menuitemradio";
+          }
+        }
+        return false;
+      });
+    }
+
+    return {
+      JSXOpeningElement(node) {
+        const roleAttr = node.attributes.find(
+          attr => attr.type === "JSXAttribute" && attr.name.name === "role"
+        );
+
+        if (node.name.name !== "menu" && 
+            (!roleAttr || !roleAttr.value || roleAttr.value.type !== "Literal" || 
+             roleAttr.value.value !== "menu")) {
+          return;
+        }
+
+        const ariaLabel = node.attributes.find(
+          attr => attr.type === "JSXAttribute" && 
+          (attr.name.name === "aria-label" || attr.name.name === "aria-labelledby")
+        );
+
+        if (!ariaLabel) {
+          context.report({ node, messageId: "menuMissingAccessibleName" });
+        }
+
+        const parent = node.parent;
+        if (parent.type === "JSXElement" && parent.children) {
+          if (!hasMenuitems(parent.children)) {
+            context.report({ node, messageId: "menuContainMenuitemElements" });
+          }
+        }
+      }
+    };
+  }
+};
