@@ -22,7 +22,7 @@ Accessibility isn't just a feature—it's a responsibility. It ensures that peop
 
 Standards like the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) provide a benchmark for making the web perceivable, operable, understandable, and robust for everyone. Incorporating these guidelines early in development helps teams build with inclusion at the core rather than treating accessibility as an afterthought.
 
-A Great Place to Start: A11yInspect
+## A Great Place to Start: A11yInspect
 
 The A11yInspect ESLint Plugin and [A11yInspect Browser Extension](https://www.barrierbreak.com/a11yinspect/) make it easier to bring accessibility into your everyday development workflow.
 
