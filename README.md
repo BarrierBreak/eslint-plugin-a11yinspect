@@ -16,6 +16,22 @@ Static accessibility analysis for React/JSX with **66 rules** covering WCAG guid
 - **TypeScript ready** - full support for `.tsx` files
 - **Zero dependencies** - lightweight and fast
 
+## Why Accessibility Matters at Development
+
+Accessibility isn't just a feature—it's a responsibility. It ensures that people of all abilities can navigate, understand, and interact with digital products without barriers. Following accessibility best practices leads to more inclusive experiences, stronger usability, and more resilient code.
+
+Standards like the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) provide a benchmark for making the web perceivable, operable, understandable, and robust for everyone. Incorporating these guidelines early in development helps teams build with inclusion at the core rather than treating accessibility as an afterthought.
+
+A Great Place to Start: A11yInspect
+
+The A11yInspect ESLint Plugin and [A11yInspect Browser Extension](https://www.barrierbreak.com/a11yinspect/) make it easier to bring accessibility into your everyday development workflow.
+
+A11yInspect ESLint Plugin catches potential accessibility issues right inside your code editor, helping you enforce WCAG-aligned patterns from the start.
+
+The [A11yInspect Browser Extension](https://www.barrierbreak.com/a11yinspect/) provides in‑browser insights into real accessibility concerns, showing how issues appear in the actual user experience.
+
+Together, these tools give developers a practical, approachable way to begin building accessible applications that align with modern standards like WCAG.
+
 ## Installation
 
 ```bash
@@ -281,6 +297,123 @@ This enables all 66 rules with appropriate severity levels (critical rules as `e
 
 // Accessible viewport
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+// Button with accessible name
+<button type="submit">Submit Form</button>
+
+// Input with label
+<label htmlFor="email">Email Address</label>
+<input id="email" type="email" required />
+
+// SVG with accessible name
+<svg aria-label="Close icon" role="img">
+  <path d="M10 10L20 20M20 10L10 20" stroke="currentColor" />
+</svg>
+
+// Link with descriptive text
+<a href="/about" aria-label="Read more about our company">About Us</a>
+
+// Proper language attribute
+<html lang="en">
+```
+
+### More Bad Examples
+
+```jsx
+// SVG without accessible name
+<svg>
+  <path d="M10 10L20 20" />
+</svg>
+
+// Button without accessible name
+<button type="submit"></button>
+
+// Click handler on non-interactive element
+<div onClick={handleClick}>Click me</div>
+
+// Input without label association
+<input type="email" placeholder="Email" />
+
+// Missing lang attribute
+<html>
+  <head>...</head>
+</html>
+
+// Duplicate id attributes
+<div id="unique">Content 1</div>
+<div id="unique">Content 2</div>
+
+// Invalid aria attribute
+<button aria-invalid="yes">Submit</button>
+
+// Dialog without aria-modal
+<dialog>Modal content</dialog>
+
+// Marquee element (deprecated and distracting)
+<marquee>Important announcement</marquee>
+
+// Missing required aria attribute for role
+<div role="checkbox" aria-checked="true"></div>
+```
+
+### More Good Examples
+
+```jsx
+// SVG with proper accessibility
+<svg aria-labelledby="title desc" role="img">
+  <title id="title">Search Icon</title>
+  <desc id="desc">A magnifying glass icon</desc>
+  <circle cx="11" cy="11" r="8" />
+</svg>
+
+// Interactive button with proper attributes
+<button type="button" aria-pressed={isPressed} onClick={toggle}>
+  {isPressed ? 'Active' : 'Inactive'}
+</button>
+
+// Accessible click handler
+<button onClick={handleClick} aria-label="Close dialog">✕</button>
+
+// Properly labeled input
+<label>
+  Email Address
+  <input type="email" required aria-describedby="email-help" />
+</label>
+<span id="email-help">Enter your work email</span>
+
+// Page with language
+<html lang="en">
+  <head><title>Page Title</title></head>
+  <body>...</body>
+</html>
+
+// Valid aria attribute values
+<button aria-invalid="true">Submit</button>
+
+// Accessible dialog
+<dialog aria-modal="true" aria-labelledby="dialog-title">
+  <h2 id="dialog-title">Confirm Action</h2>
+  <p>Are you sure?</p>
+</dialog>
+
+// Proper checkbox role with all required attributes
+<div role="checkbox" aria-checked={checked} tabIndex={0} onClick={toggle}>
+  {checked ? 'Checked' : 'Unchecked'}
+</div>
+
+// Semantic figure with figcaption
+<figure>
+  <img src="chart.png" alt="Revenue growth chart" />
+  <figcaption>Figure 1: Revenue growth in Q4 2024</figcaption>
+</figure>
+
+// Proper heading hierarchy
+<h1>Main Title</h1>
+<section>
+  <h2>Section Title</h2>
+  <h3>Subsection Title</h3>
+</section>
+<h2>Another Section</h2>
 ```
 
 ## Supported File Types
