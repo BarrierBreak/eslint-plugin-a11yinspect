@@ -17,7 +17,7 @@ npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-de
 
 ## Configuration Files
 
-### 1. ESLint 9+ (Recommended) - All 66 Rules
+### 1. ESLint 9+ (Recommended) - All 93 Rules
 
 **File: `eslint.config.mjs`**
 
@@ -36,75 +36,124 @@ export default [
     },
     plugins: { a11yinspect },
     rules: {
-      // CRITICAL (errors)
-      "a11yinspect/img-element": "error",
-      "a11yinspect/svg-element": "error",
-      "a11yinspect/media-element": "error",
-      "a11yinspect/track-element": "error",
-      "a11yinspect/canvas-element": "error",
-      "a11yinspect/a-element": "error",
-      "a11yinspect/button-element": "error",
-      "a11yinspect/input-element": "error",
-      "a11yinspect/label-element": "error",
-      "a11yinspect/select-element": "error",
-      "a11yinspect/textarea-element": "error",
-      "a11yinspect/optgroup-element": "error",
-      "a11yinspect/heading-element": "error",
-      "a11yinspect/lang-element": "error",
-      "a11yinspect/title-element": "error",
-      "a11yinspect/iframe-element": "error",
-      "a11yinspect/duplicate-id": "error",
-      "a11yinspect/area-element": "error",
+      // IMAGES & MEDIA
+      "a11yinspect/img-element-error": "error",
+      "a11yinspect/img-element-warning": "warn",
+      "a11yinspect/svg-element-error": "error",
+      "a11yinspect/svg-element-warning": "warn",
+      "a11yinspect/media-element-error": "error",
+      "a11yinspect/media-element-warning": "warn",
+      "a11yinspect/track-element-error": "error",
+      "a11yinspect/canvas-element-error": "error",
+      "a11yinspect/canvas-element-warning": "warn",
 
-      // IMPORTANT (warnings)
-      "a11yinspect/form-element": "warn",
-      "a11yinspect/autocomplete-element": "warn",
-      "a11yinspect/required-element": "warn",
-      "a11yinspect/table-element": "warn",
-      "a11yinspect/scope-element": "warn",
-      "a11yinspect/aria-element": "warn",
-      "a11yinspect/description-element": "warn",
-      "a11yinspect/expanded-element": "warn",
-      "a11yinspect/disabled-element": "warn",
-      "a11yinspect/checked-element": "warn",
-      "a11yinspect/selected-element": "warn",
-      "a11yinspect/pressed-element": "warn",
-      "a11yinspect/live-region": "warn",
-      "a11yinspect/orientation-element": "warn",
-      "a11yinspect/landmark-element": "warn",
-      "a11yinspect/skip-link": "warn",
-      "a11yinspect/section-element": "warn",
-      "a11yinspect/header-element": "warn",
-      "a11yinspect/footer-element": "warn",
-      "a11yinspect/list-element": "warn",
-      "a11yinspect/dl-element": "warn",
-      "a11yinspect/focus-element": "warn",
-      "a11yinspect/click-handler": "warn",
-      "a11yinspect/accesskey-element": "warn",
-      "a11yinspect/slider-element": "warn",
-      "a11yinspect/dialog-element": "warn",
-      "a11yinspect/details-element": "warn",
-      "a11yinspect/menu-element": "warn",
-      "a11yinspect/tab-element": "warn",
-      "a11yinspect/role-props-element": "warn",
-      "a11yinspect/autofocus-element": "warn",
-      "a11yinspect/distracting-element": "error",
-      "a11yinspect/meta-element": "warn",
-      "a11yinspect/figure-element": "warn",
-      "a11yinspect/abbr-element": "warn",
-      "a11yinspect/time-element": "warn",
-      "a11yinspect/blockquote-element": "warn",
-      "a11yinspect/ins-del-element": "warn",
-      "a11yinspect/address-element": "warn",
-      "a11yinspect/ruby-element": "warn",
-      "a11yinspect/hr-element": "warn",
-      "a11yinspect/meter-element": "warn",
-      "a11yinspect/progress-element": "warn",
-      "a11yinspect/output-element": "warn",
-      "a11yinspect/object-element": "warn",
-      "a11yinspect/embed-element": "warn",
-      "a11yinspect/map-element": "warn",
-      "a11yinspect/noscript-element": "warn"
+      // LINKS & BUTTONS
+      "a11yinspect/a-element-error": "error",
+      "a11yinspect/a-element-warning": "warn",
+      "a11yinspect/button-element-error": "error",
+      "a11yinspect/button-element-warning": "warn",
+
+      // FORMS
+      "a11yinspect/input-element-error": "error",
+      "a11yinspect/input-element-warning": "warn",
+      "a11yinspect/label-element-error": "error",
+      "a11yinspect/label-element-warning": "warn",
+      "a11yinspect/select-element-error": "error",
+      "a11yinspect/textarea-element-error": "error",
+      "a11yinspect/textarea-element-warning": "warn",
+      "a11yinspect/optgroup-element-error": "error",
+      "a11yinspect/form-element-error": "error",
+      "a11yinspect/form-element-warning": "warn",
+      "a11yinspect/autocomplete-element-error": "error",
+      "a11yinspect/autocomplete-element-warning": "warn",
+      "a11yinspect/required-element-warning": "warn",
+
+      // DOCUMENT STRUCTURE
+      "a11yinspect/heading-element-error": "error",
+      "a11yinspect/heading-element-warning": "warn",
+      "a11yinspect/lang-element-error": "error",
+      "a11yinspect/title-element-error": "error",
+      "a11yinspect/title-element-warning": "warn",
+      "a11yinspect/iframe-element-error": "error",
+      "a11yinspect/iframe-element-warning": "warn",
+      "a11yinspect/duplicate-id-error": "error",
+
+      // TABLES
+      "a11yinspect/table-element-error": "error",
+      "a11yinspect/table-element-warning": "warn",
+      "a11yinspect/scope-element-error": "error",
+
+      // ARIA ATTRIBUTES
+      "a11yinspect/aria-element-error": "error",
+      "a11yinspect/aria-element-warning": "warn",
+      "a11yinspect/description-element-error": "error",
+      "a11yinspect/description-element-warning": "warn",
+      "a11yinspect/expanded-element-warning": "warn",
+      "a11yinspect/disabled-element-warning": "warn",
+      "a11yinspect/checked-element-error": "error",
+      "a11yinspect/checked-element-warning": "warn",
+      "a11yinspect/selected-element-warning": "warn",
+      "a11yinspect/pressed-element-warning": "warn",
+      "a11yinspect/live-region-error": "error",
+      "a11yinspect/orientation-element-error": "error",
+      "a11yinspect/role-props-element-error": "error",
+      "a11yinspect/role-props-element-warning": "warn",
+
+      // LANDMARKS & NAVIGATION
+      "a11yinspect/landmark-element-error": "error",
+      "a11yinspect/landmark-element-warning": "warn",
+      "a11yinspect/skip-link-warning": "warn",
+      "a11yinspect/section-element-warning": "warn",
+      "a11yinspect/header-element-warning": "warn",
+      "a11yinspect/footer-element-warning": "warn",
+
+      // LISTS
+      "a11yinspect/list-element-error": "error",
+      "a11yinspect/list-element-warning": "warn",
+      "a11yinspect/dl-element-error": "error",
+
+      // INTERACTIVE ELEMENTS
+      "a11yinspect/focus-element-error": "error",
+      "a11yinspect/focus-element-warning": "warn",
+      "a11yinspect/click-handler-warning": "warn",
+      "a11yinspect/accesskey-element-error": "error",
+      "a11yinspect/accesskey-element-warning": "warn",
+      "a11yinspect/slider-element-warning": "warn",
+      "a11yinspect/area-element-error": "error",
+
+      // DIALOG & DETAILS
+      "a11yinspect/dialog-element-error": "error",
+      "a11yinspect/dialog-element-warning": "warn",
+      "a11yinspect/details-element-error": "error",
+      "a11yinspect/menu-element-error": "error",
+      "a11yinspect/menu-element-warning": "warn",
+      "a11yinspect/tab-element-warning": "warn",
+      "a11yinspect/autofocus-element-warning": "warn",
+      "a11yinspect/distracting-element-error": "error",
+
+      // METADATA
+      "a11yinspect/meta-element-error": "error",
+      "a11yinspect/meta-element-warning": "warn",
+
+      // SEMANTIC HTML
+      "a11yinspect/figure-element-error": "error",
+      "a11yinspect/abbr-element-error": "error",
+      "a11yinspect/time-element-error": "error",
+      "a11yinspect/blockquote-element-warning": "warn",
+      "a11yinspect/ins-del-element-warning": "warn",
+      "a11yinspect/address-element-error": "error",
+      "a11yinspect/ruby-element-error": "error",
+      "a11yinspect/ruby-element-warning": "warn",
+      "a11yinspect/hr-element-warning": "warn",
+
+      // ADDITIONAL ELEMENTS
+      "a11yinspect/meter-element-error": "error",
+      "a11yinspect/progress-element-error": "error",
+      "a11yinspect/output-element-error": "error",
+      "a11yinspect/object-element-error": "error",
+      "a11yinspect/embed-element-error": "error",
+      "a11yinspect/map-element-error": "error",
+      "a11yinspect/noscript-element-error": "error"
     }
   },
   {
@@ -135,72 +184,99 @@ export default [
   },
   "plugins": ["a11yinspect"],
   "rules": {
-    "a11yinspect/img-element": "error",
-    "a11yinspect/svg-element": "error",
-    "a11yinspect/media-element": "error",
-    "a11yinspect/track-element": "error",
-    "a11yinspect/canvas-element": "error",
-    "a11yinspect/a-element": "error",
-    "a11yinspect/button-element": "error",
-    "a11yinspect/input-element": "error",
-    "a11yinspect/label-element": "error",
-    "a11yinspect/select-element": "error",
-    "a11yinspect/textarea-element": "error",
-    "a11yinspect/optgroup-element": "error",
-    "a11yinspect/heading-element": "error",
-    "a11yinspect/lang-element": "error",
-    "a11yinspect/title-element": "error",
-    "a11yinspect/iframe-element": "error",
-    "a11yinspect/duplicate-id": "error",
-    "a11yinspect/area-element": "error",
-    "a11yinspect/form-element": "warn",
-    "a11yinspect/autocomplete-element": "warn",
-    "a11yinspect/required-element": "warn",
-    "a11yinspect/table-element": "warn",
-    "a11yinspect/scope-element": "warn",
-    "a11yinspect/aria-element": "warn",
-    "a11yinspect/description-element": "warn",
-    "a11yinspect/expanded-element": "warn",
-    "a11yinspect/disabled-element": "warn",
-    "a11yinspect/checked-element": "warn",
-    "a11yinspect/selected-element": "warn",
-    "a11yinspect/pressed-element": "warn",
-    "a11yinspect/live-region": "warn",
-    "a11yinspect/orientation-element": "warn",
-    "a11yinspect/landmark-element": "warn",
-    "a11yinspect/skip-link": "warn",
-    "a11yinspect/section-element": "warn",
-    "a11yinspect/header-element": "warn",
-    "a11yinspect/footer-element": "warn",
-    "a11yinspect/list-element": "warn",
-    "a11yinspect/dl-element": "warn",
-    "a11yinspect/focus-element": "warn",
-    "a11yinspect/click-handler": "warn",
-    "a11yinspect/accesskey-element": "warn",
-    "a11yinspect/slider-element": "warn",
-    "a11yinspect/dialog-element": "warn",
-    "a11yinspect/details-element": "warn",
-    "a11yinspect/menu-element": "warn",
-    "a11yinspect/tab-element": "warn",
-    "a11yinspect/role-props-element": "warn",
-    "a11yinspect/autofocus-element": "warn",
-    "a11yinspect/distracting-element": "error",
-    "a11yinspect/meta-element": "warn",
-    "a11yinspect/figure-element": "warn",
-    "a11yinspect/abbr-element": "warn",
-    "a11yinspect/time-element": "warn",
-    "a11yinspect/blockquote-element": "warn",
-    "a11yinspect/ins-del-element": "warn",
-    "a11yinspect/address-element": "warn",
-    "a11yinspect/ruby-element": "warn",
-    "a11yinspect/hr-element": "warn",
-    "a11yinspect/meter-element": "warn",
-    "a11yinspect/progress-element": "warn",
-    "a11yinspect/output-element": "warn",
-    "a11yinspect/object-element": "warn",
-    "a11yinspect/embed-element": "warn",
-    "a11yinspect/map-element": "warn",
-    "a11yinspect/noscript-element": "warn"
+    "a11yinspect/img-element-error": "error",
+    "a11yinspect/img-element-warning": "warn",
+    "a11yinspect/svg-element-error": "error",
+    "a11yinspect/svg-element-warning": "warn",
+    "a11yinspect/media-element-error": "error",
+    "a11yinspect/media-element-warning": "warn",
+    "a11yinspect/track-element-error": "error",
+    "a11yinspect/canvas-element-error": "error",
+    "a11yinspect/canvas-element-warning": "warn",
+    "a11yinspect/a-element-error": "error",
+    "a11yinspect/a-element-warning": "warn",
+    "a11yinspect/button-element-error": "error",
+    "a11yinspect/button-element-warning": "warn",
+    "a11yinspect/input-element-error": "error",
+    "a11yinspect/input-element-warning": "warn",
+    "a11yinspect/label-element-error": "error",
+    "a11yinspect/label-element-warning": "warn",
+    "a11yinspect/select-element-error": "error",
+    "a11yinspect/textarea-element-error": "error",
+    "a11yinspect/textarea-element-warning": "warn",
+    "a11yinspect/optgroup-element-error": "error",
+    "a11yinspect/form-element-error": "error",
+    "a11yinspect/form-element-warning": "warn",
+    "a11yinspect/autocomplete-element-error": "error",
+    "a11yinspect/autocomplete-element-warning": "warn",
+    "a11yinspect/required-element-warning": "warn",
+    "a11yinspect/heading-element-error": "error",
+    "a11yinspect/heading-element-warning": "warn",
+    "a11yinspect/lang-element-error": "error",
+    "a11yinspect/title-element-error": "error",
+    "a11yinspect/title-element-warning": "warn",
+    "a11yinspect/iframe-element-error": "error",
+    "a11yinspect/iframe-element-warning": "warn",
+    "a11yinspect/duplicate-id-error": "error",
+    "a11yinspect/table-element-error": "error",
+    "a11yinspect/table-element-warning": "warn",
+    "a11yinspect/scope-element-error": "error",
+    "a11yinspect/aria-element-error": "error",
+    "a11yinspect/aria-element-warning": "warn",
+    "a11yinspect/description-element-error": "error",
+    "a11yinspect/description-element-warning": "warn",
+    "a11yinspect/expanded-element-warning": "warn",
+    "a11yinspect/disabled-element-warning": "warn",
+    "a11yinspect/checked-element-error": "error",
+    "a11yinspect/checked-element-warning": "warn",
+    "a11yinspect/selected-element-warning": "warn",
+    "a11yinspect/pressed-element-warning": "warn",
+    "a11yinspect/live-region-error": "error",
+    "a11yinspect/orientation-element-error": "error",
+    "a11yinspect/role-props-element-error": "error",
+    "a11yinspect/role-props-element-warning": "warn",
+    "a11yinspect/landmark-element-error": "error",
+    "a11yinspect/landmark-element-warning": "warn",
+    "a11yinspect/skip-link-warning": "warn",
+    "a11yinspect/section-element-warning": "warn",
+    "a11yinspect/header-element-warning": "warn",
+    "a11yinspect/footer-element-warning": "warn",
+    "a11yinspect/list-element-error": "error",
+    "a11yinspect/list-element-warning": "warn",
+    "a11yinspect/dl-element-error": "error",
+    "a11yinspect/focus-element-error": "error",
+    "a11yinspect/focus-element-warning": "warn",
+    "a11yinspect/click-handler-warning": "warn",
+    "a11yinspect/accesskey-element-error": "error",
+    "a11yinspect/accesskey-element-warning": "warn",
+    "a11yinspect/slider-element-warning": "warn",
+    "a11yinspect/area-element-error": "error",
+    "a11yinspect/dialog-element-error": "error",
+    "a11yinspect/dialog-element-warning": "warn",
+    "a11yinspect/details-element-error": "error",
+    "a11yinspect/menu-element-error": "error",
+    "a11yinspect/menu-element-warning": "warn",
+    "a11yinspect/tab-element-warning": "warn",
+    "a11yinspect/autofocus-element-warning": "warn",
+    "a11yinspect/distracting-element-error": "error",
+    "a11yinspect/meta-element-error": "error",
+    "a11yinspect/meta-element-warning": "warn",
+    "a11yinspect/figure-element-error": "error",
+    "a11yinspect/abbr-element-error": "error",
+    "a11yinspect/time-element-error": "error",
+    "a11yinspect/blockquote-element-warning": "warn",
+    "a11yinspect/ins-del-element-warning": "warn",
+    "a11yinspect/address-element-error": "error",
+    "a11yinspect/ruby-element-error": "error",
+    "a11yinspect/ruby-element-warning": "warn",
+    "a11yinspect/hr-element-warning": "warn",
+    "a11yinspect/meter-element-error": "error",
+    "a11yinspect/progress-element-error": "error",
+    "a11yinspect/output-element-error": "error",
+    "a11yinspect/object-element-error": "error",
+    "a11yinspect/embed-element-error": "error",
+    "a11yinspect/map-element-error": "error",
+    "a11yinspect/noscript-element-error": "error"
   }
 }
 ```
@@ -225,10 +301,14 @@ export default [
       parserOptions: { ecmaFeatures: { jsx: true } }
     },
     rules: {
-      "a11yinspect/img-element": "error",
-      "a11yinspect/a-element": "error",
-      "a11yinspect/button-element": "error",
-      "a11yinspect/canvas-element": "error"
+      "a11yinspect/img-element-error": "error",
+      "a11yinspect/img-element-warning": "warn",
+      "a11yinspect/a-element-error": "error",
+      "a11yinspect/a-element-warning": "warn",
+      "a11yinspect/button-element-error": "error",
+      "a11yinspect/button-element-warning": "warn",
+      "a11yinspect/canvas-element-error": "error",
+      "a11yinspect/canvas-element-warning": "warn"
     }
   },
   // TypeScript files
@@ -245,10 +325,14 @@ export default [
       a11yinspect
     },
     rules: {
-      "a11yinspect/img-element": "error",
-      "a11yinspect/a-element": "error",
-      "a11yinspect/button-element": "error",
-      "a11yinspect/canvas-element": "error"
+      "a11yinspect/img-element-error": "error",
+      "a11yinspect/img-element-warning": "warn",
+      "a11yinspect/a-element-error": "error",
+      "a11yinspect/a-element-warning": "warn",
+      "a11yinspect/button-element-error": "error",
+      "a11yinspect/button-element-warning": "warn",
+      "a11yinspect/canvas-element-error": "error",
+      "a11yinspect/canvas-element-warning": "warn"
     }
   }
 ];
@@ -260,30 +344,31 @@ export default [
 
 ### Error (Must Fix)
 ```javascript
-"a11yinspect/img-element": "error"        // Blocks build/CI
-"a11yinspect/a-element": "error"
-"a11yinspect/button-element": "error"
-"a11yinspect/input-element": "error"
-"a11yinspect/heading-element": "error"
-"a11yinspect/lang-element": "error"
-"a11yinspect/title-element": "error"
-"a11yinspect/duplicate-id": "error"
-"a11yinspect/canvas-element": "error"
+"a11yinspect/img-element-error": "error"        // Blocks build/CI
+"a11yinspect/a-element-error": "error"
+"a11yinspect/button-element-error": "error"
+"a11yinspect/input-element-error": "error"
+"a11yinspect/heading-element-error": "error"
+"a11yinspect/lang-element-error": "error"
+"a11yinspect/title-element-error": "error"
+"a11yinspect/duplicate-id-error": "error"
+"a11yinspect/canvas-element-error": "error"
 ```
 
 ### Warning (Should Fix)
 ```javascript
-"a11yinspect/form-element": "warn"        // Shows warning
-"a11yinspect/table-element": "warn"
-"a11yinspect/aria-element": "warn"
-"a11yinspect/focus-element": "warn"
-"a11yinspect/click-handler": "warn"
-"a11yinspect/slider-element": "warn"
+"a11yinspect/img-element-warning": "warn"       // Shows warning
+"a11yinspect/form-element-warning": "warn"
+"a11yinspect/table-element-warning": "warn"
+"a11yinspect/aria-element-warning": "warn"
+"a11yinspect/focus-element-warning": "warn"
+"a11yinspect/click-handler-warning": "warn"
+"a11yinspect/slider-element-warning": "warn"
 ```
 
 ### Off (Disabled)
 ```javascript
-"a11yinspect/some-rule": "off"           // Completely disabled
+"a11yinspect/some-rule-error": "off"           // Completely disabled
 ```
 
 ---
@@ -307,7 +392,7 @@ npx eslint . --format json --output-file a11y-report.json
 {
   "scripts": {
     "lint": "eslint .",
-    "lint:a11y": "eslint . --rule '{\"a11yinspect/img-element\": \"error\"}'",
+    "lint:a11y": "eslint . --rule '{\"a11yinspect/img-element-error\": \"error\"}'",
     "lint:report": "eslint . --format json --output-file a11y-report.json"
   }
 }
@@ -327,9 +412,12 @@ export default [
     files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: { a11yinspect },
     rules: {
-      "a11yinspect/img-element": "error",
-      "a11yinspect/a-element": "error",
-      "a11yinspect/canvas-element": "error"
+      "a11yinspect/img-element-error": "error",
+      "a11yinspect/img-element-warning": "warn",
+      "a11yinspect/a-element-error": "error",
+      "a11yinspect/a-element-warning": "warn",
+      "a11yinspect/canvas-element-error": "error",
+      "a11yinspect/canvas-element-warning": "warn"
     }
   },
   { ignores: [".next/**", "out/**"] }
@@ -346,8 +434,10 @@ export default [
     files: ["src/**/*.{js,jsx,ts,tsx}"],
     plugins: { a11yinspect },
     rules: {
-      "a11yinspect/img-element": "error",
-      "a11yinspect/canvas-element": "error"
+      "a11yinspect/img-element-error": "error",
+      "a11yinspect/img-element-warning": "warn",
+      "a11yinspect/canvas-element-error": "error",
+      "a11yinspect/canvas-element-warning": "warn"
     }
   }
 ];
@@ -404,9 +494,9 @@ parserOptions: {
 Start with critical rules only:
 ```javascript
 rules: {
-  "a11yinspect/img-element": "error",
-  "a11yinspect/a-element": "error",
-  "a11yinspect/button-element": "error"
+  "a11yinspect/img-element-error": "error",
+  "a11yinspect/a-element-error": "error",
+  "a11yinspect/button-element-error": "error"
 }
 ```
 
