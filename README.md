@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/@barrierbreak/eslint-plugin-a11yinspect.svg)](https://www.npmjs.com/package/@barrierbreak/eslint-plugin-a11yinspect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Static accessibility analysis for React/JSX with **93 rules** covering WCAG guidelines. Catch accessibility issues at development time with zero runtime overhead.
+Static accessibility analysis for React/JSX with **93 rules** covering Web Content Accessibility Guideline (WCAG) guidelines. Catch accessibility issues at development time with zero runtime overhead.
 
 ## Features
 
@@ -109,9 +109,9 @@ export default [
 }
 ```
 
-This enables all 93 rules with appropriate severity levels (error rules as `error`, warning rules as `warn`).
+This enables all 93 accessibility rules with appropriate severity levels (error rules as `error`, warning rules as `warn`).
 
-## Rules Overview
+## Accessibility Rules Overview
 
 **93 rules** organized by category (split into error and warning variants):
 
@@ -258,9 +258,9 @@ This enables all 93 rules with appropriate severity levels (error rules as `erro
 | `map-element-error` | error | Image maps |
 | `noscript-element-error` | error | Noscript fallbacks |
 
-## Examples
+## Acceibility Examples
 
-### Bad (will trigger errors)
+### Bad Accessibility (will trigger errors)
 
 ```jsx
 // img missing alt and no aria alternative
@@ -294,7 +294,7 @@ This enables all 93 rules with appropriate severity levels (error rules as `erro
 <meta name="viewport" content="user-scalable=no" />
 ```
 
-### Good (passes checks)
+### Good Acceibility (passes checks)
 
 ```jsx
 // Proper alt text
@@ -349,7 +349,7 @@ This enables all 93 rules with appropriate severity levels (error rules as `erro
 <html lang="en">
 ```
 
-### More Bad Examples
+### More Bad Acceibility Examples
 
 ```jsx
 // SVG without accessible name
@@ -388,7 +388,7 @@ This enables all 93 rules with appropriate severity levels (error rules as `erro
 <div role="checkbox" aria-checked="true"></div>
 ```
 
-### More Good Examples
+### More Good Acceibility Examples
 
 ```jsx
 // SVG with proper accessibility
@@ -448,7 +448,7 @@ This enables all 93 rules with appropriate severity levels (error rules as `erro
 <h2>Another Section</h2>
 ```
 
-## Supported File Types
+## Accessibility Support for File Types
 
 | Extension | Support |
 |-----------|---------|
