@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/@barrierbreak/eslint-plugin-a11yinspect.svg)](https://www.npmjs.com/package/@barrierbreak/eslint-plugin-a11yinspect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Static accessibility analysis for React/JSX with **93 rules** covering Web Content Accessibility Guideline (WCAG) guidelines. Catch accessibility issues at development time with zero runtime overhead.
+Static accessibility analysis for React/JSX with **93 rules** covering Web Content Accessibility Guideline (WCAG) guidelines, EN 301 549 and other accessibility standards. Catch accessibility issues at development time with zero runtime overhead.
 
 ## Features
 
@@ -565,7 +565,7 @@ jobs:
 }
 ```
 
-## Troubleshooting
+## Troubleshooting eslint-plugin-a11yinspect
 
 **"Cannot find module 'eslint-plugin-a11yinspect'"**
 
