@@ -258,7 +258,7 @@ This enables all 93 accessibility rules with appropriate severity levels (error 
 | `map-element-error` | error | Image maps |
 | `noscript-element-error` | error | Noscript fallbacks |
 
-## Acceibility Examples
+## Accessibility Examples
 
 ### Bad Accessibility (will trigger errors)
 
@@ -294,7 +294,7 @@ This enables all 93 accessibility rules with appropriate severity levels (error 
 <meta name="viewport" content="user-scalable=no" />
 ```
 
-### Good Acceibility (passes checks)
+### Good Accessibility (passes checks)
 
 ```jsx
 // Proper alt text
@@ -349,7 +349,7 @@ This enables all 93 accessibility rules with appropriate severity levels (error 
 <html lang="en">
 ```
 
-### More Bad Acceibility Examples
+### More Bad Accessibility Examples
 
 ```jsx
 // SVG without accessible name
@@ -388,7 +388,7 @@ This enables all 93 accessibility rules with appropriate severity levels (error 
 <div role="checkbox" aria-checked="true"></div>
 ```
 
-### More Good Acceibility Examples
+### More Good Accessibility Examples
 
 ```jsx
 // SVG with proper accessibility
