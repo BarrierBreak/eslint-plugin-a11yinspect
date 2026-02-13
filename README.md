@@ -42,6 +42,8 @@ npm install @barrierbreak/eslint-plugin-a11yinspect --save-dev
 
 ### ESLint 9+ (Flat Config) - Recommended
 
+Create `eslint.config.mjs` and copy-paste:
+
 ```javascript
 // eslint.config.mjs
 import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
@@ -58,58 +60,53 @@ export default [
     },
     plugins: { a11yinspect },
     rules: {
-      // Critical errors
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn",
-      "a11yinspect/button-element-error": "error",
-      "a11yinspect/button-element-warning": "warn",
-      "a11yinspect/input-element-error": "error",
-      "a11yinspect/input-element-warning": "warn",
-      "a11yinspect/label-element-error": "error",
-      "a11yinspect/label-element-warning": "warn",
-      "a11yinspect/heading-element-error": "error",
-      "a11yinspect/heading-element-warning": "warn",
-      "a11yinspect/canvas-element-error": "error",
-      "a11yinspect/canvas-element-warning": "warn",
-      // See full rule list below
+      ...a11yinspect.configs.recommended.rules
     }
   }
 ];
 ```
 
+That's it — all 93 rules are enabled with appropriate severity levels (`error` or `warn`).
+
 ### ESLint 7-8 (.eslintrc)
 
-```json
-{
-  "plugins": ["a11yinspect"],
-  "parserOptions": {
-    "ecmaFeatures": { "jsx": true }
-  },
-  "rules": {
-    "a11yinspect/img-element-error": "error",
-    "a11yinspect/img-element-warning": "warn",
-    "a11yinspect/a-element-error": "error",
-    "a11yinspect/a-element-warning": "warn",
-    "a11yinspect/button-element-error": "error",
-    "a11yinspect/button-element-warning": "warn",
-    "a11yinspect/input-element-error": "error",
-    "a11yinspect/heading-element-error": "error",
-    "a11yinspect/canvas-element-error": "error"
-  }
-}
-```
-
-### Using the Recommended Config
+Add to your `.eslintrc.json`:
 
 ```json
 {
-  "extends": ["plugin:a11yinspect/recommended"]
+  "extends": ["plugin:@barrierbreak/a11yinspect/recommended"]
 }
 ```
 
 This enables all 93 accessibility rules with appropriate severity levels (error rules as `error`, warning rules as `warn`).
+
+### Available Configs
+
+| Config | Description |
+|--------|-------------|
+| `recommended` | `-error` rules as `error`, `-warning` rules as `warn` (default, start here) |
+| `strict` | All 93 rules set to `error` — blocks CI on any issue |
+| `errors-only` | Only `-error` rules enabled, all `-warning` rules off |
+| `warnings-only` | Only `-warning` rules enabled (as `warn`), all `-error` rules off |
+
+**ESLint 9+ (flat config):**
+
+```javascript
+// Use any config — just swap "recommended" for the one you want
+rules: {
+  ...a11yinspect.configs.recommended.rules   // or .strict, ["errors-only"], ["warnings-only"]
+}
+```
+
+**ESLint 7-8 (.eslintrc):**
+
+```json
+{
+  "extends": ["plugin:@barrierbreak/a11yinspect/recommended"]
+}
+```
+
+Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed.
 
 ## Accessibility Rules Overview
 
@@ -475,14 +472,12 @@ import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 export default [
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      parserOptions: { ecmaFeatures: { jsx: true } }
+    },
     plugins: { a11yinspect },
     rules: {
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn",
-      "a11yinspect/heading-element-error": "error",
-      "a11yinspect/heading-element-warning": "warn"
+      ...a11yinspect.configs.recommended.rules
     }
   },
   { ignores: [".next/**", "out/**"] }
@@ -498,12 +493,12 @@ import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 export default [
   {
     files: ["src/**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      parserOptions: { ecmaFeatures: { jsx: true } }
+    },
     plugins: { a11yinspect },
     rules: {
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn"
+      ...a11yinspect.configs.recommended.rules
     }
   }
 ];
@@ -525,10 +520,7 @@ export default [
     },
     plugins: { a11yinspect },
     rules: {
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn"
+      ...a11yinspect.configs.recommended.rules
     }
   }
 ];

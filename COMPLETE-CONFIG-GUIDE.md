@@ -7,7 +7,7 @@
 
 ```bash
 # Install the plugin
-npm install eslint-plugin-a11yinspect --save-dev
+npm install @barrierbreak/eslint-plugin-a11yinspect --save-dev
 
 # For TypeScript support (optional)
 npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
@@ -15,14 +15,25 @@ npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-de
 
 ---
 
+## Available Configs
+
+| Config | Description | Use case |
+|--------|-------------|----------|
+| **`recommended`** | `-error` rules as `error`, `-warning` rules as `warn` | Default — start here |
+| **`strict`** | All 93 rules set to `error` | CI enforcement — block on any issue |
+| **`errors-only`** | Only `-error` rules enabled, `-warning` rules off | Focus on critical issues first |
+| **`warnings-only`** | Only `-warning` rules enabled as `warn`, `-error` rules off | Awareness mode — no build failures |
+
+---
+
 ## Configuration Files
 
 ### 1. ESLint 9+ (Recommended) - All 93 Rules
 
-**File: `eslint.config.mjs`**
+**File: `eslint.config.mjs`** — copy-paste and go:
 
 ```javascript
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 
 export default [
   {
@@ -36,124 +47,7 @@ export default [
     },
     plugins: { a11yinspect },
     rules: {
-      // IMAGES & MEDIA
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/svg-element-error": "error",
-      "a11yinspect/svg-element-warning": "warn",
-      "a11yinspect/media-element-error": "error",
-      "a11yinspect/media-element-warning": "warn",
-      "a11yinspect/track-element-error": "error",
-      "a11yinspect/canvas-element-error": "error",
-      "a11yinspect/canvas-element-warning": "warn",
-
-      // LINKS & BUTTONS
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn",
-      "a11yinspect/button-element-error": "error",
-      "a11yinspect/button-element-warning": "warn",
-
-      // FORMS
-      "a11yinspect/input-element-error": "error",
-      "a11yinspect/input-element-warning": "warn",
-      "a11yinspect/label-element-error": "error",
-      "a11yinspect/label-element-warning": "warn",
-      "a11yinspect/select-element-error": "error",
-      "a11yinspect/textarea-element-error": "error",
-      "a11yinspect/textarea-element-warning": "warn",
-      "a11yinspect/optgroup-element-error": "error",
-      "a11yinspect/form-element-error": "error",
-      "a11yinspect/form-element-warning": "warn",
-      "a11yinspect/autocomplete-element-error": "error",
-      "a11yinspect/autocomplete-element-warning": "warn",
-      "a11yinspect/required-element-warning": "warn",
-
-      // DOCUMENT STRUCTURE
-      "a11yinspect/heading-element-error": "error",
-      "a11yinspect/heading-element-warning": "warn",
-      "a11yinspect/lang-element-error": "error",
-      "a11yinspect/title-element-error": "error",
-      "a11yinspect/title-element-warning": "warn",
-      "a11yinspect/iframe-element-error": "error",
-      "a11yinspect/iframe-element-warning": "warn",
-      "a11yinspect/duplicate-id-error": "error",
-
-      // TABLES
-      "a11yinspect/table-element-error": "error",
-      "a11yinspect/table-element-warning": "warn",
-      "a11yinspect/scope-element-error": "error",
-
-      // ARIA ATTRIBUTES
-      "a11yinspect/aria-element-error": "error",
-      "a11yinspect/aria-element-warning": "warn",
-      "a11yinspect/description-element-error": "error",
-      "a11yinspect/description-element-warning": "warn",
-      "a11yinspect/expanded-element-warning": "warn",
-      "a11yinspect/disabled-element-warning": "warn",
-      "a11yinspect/checked-element-error": "error",
-      "a11yinspect/checked-element-warning": "warn",
-      "a11yinspect/selected-element-warning": "warn",
-      "a11yinspect/pressed-element-warning": "warn",
-      "a11yinspect/live-region-error": "error",
-      "a11yinspect/orientation-element-error": "error",
-      "a11yinspect/role-props-element-error": "error",
-      "a11yinspect/role-props-element-warning": "warn",
-
-      // LANDMARKS & NAVIGATION
-      "a11yinspect/landmark-element-error": "error",
-      "a11yinspect/landmark-element-warning": "warn",
-      "a11yinspect/skip-link-warning": "warn",
-      "a11yinspect/section-element-warning": "warn",
-      "a11yinspect/header-element-warning": "warn",
-      "a11yinspect/footer-element-warning": "warn",
-
-      // LISTS
-      "a11yinspect/list-element-error": "error",
-      "a11yinspect/list-element-warning": "warn",
-      "a11yinspect/dl-element-error": "error",
-
-      // INTERACTIVE ELEMENTS
-      "a11yinspect/focus-element-error": "error",
-      "a11yinspect/focus-element-warning": "warn",
-      "a11yinspect/click-handler-warning": "warn",
-      "a11yinspect/accesskey-element-error": "error",
-      "a11yinspect/accesskey-element-warning": "warn",
-      "a11yinspect/slider-element-warning": "warn",
-      "a11yinspect/area-element-error": "error",
-
-      // DIALOG & DETAILS
-      "a11yinspect/dialog-element-error": "error",
-      "a11yinspect/dialog-element-warning": "warn",
-      "a11yinspect/details-element-error": "error",
-      "a11yinspect/menu-element-error": "error",
-      "a11yinspect/menu-element-warning": "warn",
-      "a11yinspect/tab-element-warning": "warn",
-      "a11yinspect/autofocus-element-warning": "warn",
-      "a11yinspect/distracting-element-error": "error",
-
-      // METADATA
-      "a11yinspect/meta-element-error": "error",
-      "a11yinspect/meta-element-warning": "warn",
-
-      // SEMANTIC HTML
-      "a11yinspect/figure-element-error": "error",
-      "a11yinspect/abbr-element-error": "error",
-      "a11yinspect/time-element-error": "error",
-      "a11yinspect/blockquote-element-warning": "warn",
-      "a11yinspect/ins-del-element-warning": "warn",
-      "a11yinspect/address-element-error": "error",
-      "a11yinspect/ruby-element-error": "error",
-      "a11yinspect/ruby-element-warning": "warn",
-      "a11yinspect/hr-element-warning": "warn",
-
-      // ADDITIONAL ELEMENTS
-      "a11yinspect/meter-element-error": "error",
-      "a11yinspect/progress-element-error": "error",
-      "a11yinspect/output-element-error": "error",
-      "a11yinspect/object-element-error": "error",
-      "a11yinspect/embed-element-error": "error",
-      "a11yinspect/map-element-error": "error",
-      "a11yinspect/noscript-element-error": "error"
+      ...a11yinspect.configs.recommended.rules
     }
   },
   {
@@ -162,11 +56,38 @@ export default [
 ];
 ```
 
+This enables all 93 rules with the correct severity (`error` or `warn`).
+
+Swap `recommended` for any other config:
+
+```javascript
+// Strict — all rules as errors, blocks CI on any issue
+rules: { ...a11yinspect.configs.strict.rules }
+
+// Errors only — skip warnings, focus on critical issues
+rules: { ...a11yinspect.configs["errors-only"].rules }
+
+// Warnings only — awareness mode, no build failures
+rules: { ...a11yinspect.configs["warnings-only"].rules }
+```
+
+To override a specific rule:
+
+```javascript
+rules: {
+  ...a11yinspect.configs.recommended.rules,
+  // Override: turn off a specific rule
+  "a11yinspect/hr-element-warning": "off",
+  // Override: downgrade an error to a warning
+  "a11yinspect/abbr-element-error": "warn"
+}
+```
+
 ---
 
 ### 2. ESLint 7-8 (Legacy Format)
 
-**File: `.eslintrc.json`**
+**File: `.eslintrc.json`** — copy-paste and go:
 
 ```json
 {
@@ -182,101 +103,27 @@ export default [
       "jsx": true
     }
   },
-  "plugins": ["a11yinspect"],
+  "extends": ["plugin:@barrierbreak/a11yinspect/recommended"],
+  "ignorePatterns": ["node_modules/", "dist/", "build/"]
+}
+```
+
+This enables all 93 rules. Swap `recommended` for any other config:
+
+```json
+{ "extends": ["plugin:@barrierbreak/a11yinspect/strict"] }
+{ "extends": ["plugin:@barrierbreak/a11yinspect/errors-only"] }
+{ "extends": ["plugin:@barrierbreak/a11yinspect/warnings-only"] }
+```
+
+To override specific rules, add a `rules` section:
+
+```json
+{
+  "extends": ["plugin:@barrierbreak/a11yinspect/recommended"],
   "rules": {
-    "a11yinspect/img-element-error": "error",
-    "a11yinspect/img-element-warning": "warn",
-    "a11yinspect/svg-element-error": "error",
-    "a11yinspect/svg-element-warning": "warn",
-    "a11yinspect/media-element-error": "error",
-    "a11yinspect/media-element-warning": "warn",
-    "a11yinspect/track-element-error": "error",
-    "a11yinspect/canvas-element-error": "error",
-    "a11yinspect/canvas-element-warning": "warn",
-    "a11yinspect/a-element-error": "error",
-    "a11yinspect/a-element-warning": "warn",
-    "a11yinspect/button-element-error": "error",
-    "a11yinspect/button-element-warning": "warn",
-    "a11yinspect/input-element-error": "error",
-    "a11yinspect/input-element-warning": "warn",
-    "a11yinspect/label-element-error": "error",
-    "a11yinspect/label-element-warning": "warn",
-    "a11yinspect/select-element-error": "error",
-    "a11yinspect/textarea-element-error": "error",
-    "a11yinspect/textarea-element-warning": "warn",
-    "a11yinspect/optgroup-element-error": "error",
-    "a11yinspect/form-element-error": "error",
-    "a11yinspect/form-element-warning": "warn",
-    "a11yinspect/autocomplete-element-error": "error",
-    "a11yinspect/autocomplete-element-warning": "warn",
-    "a11yinspect/required-element-warning": "warn",
-    "a11yinspect/heading-element-error": "error",
-    "a11yinspect/heading-element-warning": "warn",
-    "a11yinspect/lang-element-error": "error",
-    "a11yinspect/title-element-error": "error",
-    "a11yinspect/title-element-warning": "warn",
-    "a11yinspect/iframe-element-error": "error",
-    "a11yinspect/iframe-element-warning": "warn",
-    "a11yinspect/duplicate-id-error": "error",
-    "a11yinspect/table-element-error": "error",
-    "a11yinspect/table-element-warning": "warn",
-    "a11yinspect/scope-element-error": "error",
-    "a11yinspect/aria-element-error": "error",
-    "a11yinspect/aria-element-warning": "warn",
-    "a11yinspect/description-element-error": "error",
-    "a11yinspect/description-element-warning": "warn",
-    "a11yinspect/expanded-element-warning": "warn",
-    "a11yinspect/disabled-element-warning": "warn",
-    "a11yinspect/checked-element-error": "error",
-    "a11yinspect/checked-element-warning": "warn",
-    "a11yinspect/selected-element-warning": "warn",
-    "a11yinspect/pressed-element-warning": "warn",
-    "a11yinspect/live-region-error": "error",
-    "a11yinspect/orientation-element-error": "error",
-    "a11yinspect/role-props-element-error": "error",
-    "a11yinspect/role-props-element-warning": "warn",
-    "a11yinspect/landmark-element-error": "error",
-    "a11yinspect/landmark-element-warning": "warn",
-    "a11yinspect/skip-link-warning": "warn",
-    "a11yinspect/section-element-warning": "warn",
-    "a11yinspect/header-element-warning": "warn",
-    "a11yinspect/footer-element-warning": "warn",
-    "a11yinspect/list-element-error": "error",
-    "a11yinspect/list-element-warning": "warn",
-    "a11yinspect/dl-element-error": "error",
-    "a11yinspect/focus-element-error": "error",
-    "a11yinspect/focus-element-warning": "warn",
-    "a11yinspect/click-handler-warning": "warn",
-    "a11yinspect/accesskey-element-error": "error",
-    "a11yinspect/accesskey-element-warning": "warn",
-    "a11yinspect/slider-element-warning": "warn",
-    "a11yinspect/area-element-error": "error",
-    "a11yinspect/dialog-element-error": "error",
-    "a11yinspect/dialog-element-warning": "warn",
-    "a11yinspect/details-element-error": "error",
-    "a11yinspect/menu-element-error": "error",
-    "a11yinspect/menu-element-warning": "warn",
-    "a11yinspect/tab-element-warning": "warn",
-    "a11yinspect/autofocus-element-warning": "warn",
-    "a11yinspect/distracting-element-error": "error",
-    "a11yinspect/meta-element-error": "error",
-    "a11yinspect/meta-element-warning": "warn",
-    "a11yinspect/figure-element-error": "error",
-    "a11yinspect/abbr-element-error": "error",
-    "a11yinspect/time-element-error": "error",
-    "a11yinspect/blockquote-element-warning": "warn",
-    "a11yinspect/ins-del-element-warning": "warn",
-    "a11yinspect/address-element-error": "error",
-    "a11yinspect/ruby-element-error": "error",
-    "a11yinspect/ruby-element-warning": "warn",
-    "a11yinspect/hr-element-warning": "warn",
-    "a11yinspect/meter-element-error": "error",
-    "a11yinspect/progress-element-error": "error",
-    "a11yinspect/output-element-error": "error",
-    "a11yinspect/object-element-error": "error",
-    "a11yinspect/embed-element-error": "error",
-    "a11yinspect/map-element-error": "error",
-    "a11yinspect/noscript-element-error": "error"
+    "a11yinspect/hr-element-warning": "off",
+    "a11yinspect/abbr-element-error": "warn"
   }
 }
 ```
@@ -288,7 +135,7 @@ export default [
 **File: `eslint.config.mjs`**
 
 ```javascript
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 
@@ -301,14 +148,7 @@ export default [
       parserOptions: { ecmaFeatures: { jsx: true } }
     },
     rules: {
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn",
-      "a11yinspect/button-element-error": "error",
-      "a11yinspect/button-element-warning": "warn",
-      "a11yinspect/canvas-element-error": "error",
-      "a11yinspect/canvas-element-warning": "warn"
+      ...a11yinspect.configs.recommended.rules
     }
   },
   // TypeScript files
@@ -325,14 +165,7 @@ export default [
       a11yinspect
     },
     rules: {
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn",
-      "a11yinspect/button-element-error": "error",
-      "a11yinspect/button-element-warning": "warn",
-      "a11yinspect/canvas-element-error": "error",
-      "a11yinspect/canvas-element-warning": "warn"
+      ...a11yinspect.configs.recommended.rules
     }
   }
 ];
@@ -342,33 +175,25 @@ export default [
 
 ## Rule Severity Levels
 
-### Error (Must Fix)
-```javascript
-"a11yinspect/img-element-error": "error"        // Blocks build/CI
-"a11yinspect/a-element-error": "error"
-"a11yinspect/button-element-error": "error"
-"a11yinspect/input-element-error": "error"
-"a11yinspect/heading-element-error": "error"
-"a11yinspect/lang-element-error": "error"
-"a11yinspect/title-element-error": "error"
-"a11yinspect/duplicate-id-error": "error"
-"a11yinspect/canvas-element-error": "error"
-```
+Each config sets severity differently:
 
-### Warning (Should Fix)
-```javascript
-"a11yinspect/img-element-warning": "warn"       // Shows warning
-"a11yinspect/form-element-warning": "warn"
-"a11yinspect/table-element-warning": "warn"
-"a11yinspect/aria-element-warning": "warn"
-"a11yinspect/focus-element-warning": "warn"
-"a11yinspect/click-handler-warning": "warn"
-"a11yinspect/slider-element-warning": "warn"
-```
+| Config | `-error` rules | `-warning` rules |
+|--------|---------------|-----------------|
+| `recommended` | `"error"` | `"warn"` |
+| `strict` | `"error"` | `"error"` |
+| `errors-only` | `"error"` | `"off"` |
+| `warnings-only` | `"off"` | `"warn"` |
 
-### Off (Disabled)
+To override any rule after spreading a config:
+
 ```javascript
-"a11yinspect/some-rule-error": "off"           // Completely disabled
+rules: {
+  ...a11yinspect.configs.recommended.rules,
+  // Downgrade to warning
+  "a11yinspect/img-element-error": "warn",
+  // Disable completely
+  "a11yinspect/hr-element-warning": "off"
+}
 ```
 
 ---
@@ -405,19 +230,17 @@ npx eslint . --format json --output-file a11y-report.json
 ### Next.js
 ```javascript
 // eslint.config.mjs
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 
 export default [
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      parserOptions: { ecmaFeatures: { jsx: true } }
+    },
     plugins: { a11yinspect },
     rules: {
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/a-element-error": "error",
-      "a11yinspect/a-element-warning": "warn",
-      "a11yinspect/canvas-element-error": "error",
-      "a11yinspect/canvas-element-warning": "warn"
+      ...a11yinspect.configs.recommended.rules
     }
   },
   { ignores: [".next/**", "out/**"] }
@@ -427,17 +250,17 @@ export default [
 ### Vite
 ```javascript
 // eslint.config.mjs
-import a11yinspect from "eslint-plugin-a11yinspect";
+import a11yinspect from "@barrierbreak/eslint-plugin-a11yinspect";
 
 export default [
   {
     files: ["src/**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      parserOptions: { ecmaFeatures: { jsx: true } }
+    },
     plugins: { a11yinspect },
     rules: {
-      "a11yinspect/img-element-error": "error",
-      "a11yinspect/img-element-warning": "warn",
-      "a11yinspect/canvas-element-error": "error",
-      "a11yinspect/canvas-element-warning": "warn"
+      ...a11yinspect.configs.recommended.rules
     }
   }
 ];
@@ -478,7 +301,7 @@ jobs:
 
 ### "Cannot find module 'eslint-plugin-a11yinspect'"
 ```bash
-npm install eslint-plugin-a11yinspect --save-dev
+npm install @barrierbreak/eslint-plugin-a11yinspect --save-dev
 ```
 
 ### ESLint not recognizing JSX
@@ -491,12 +314,20 @@ parserOptions: {
 ```
 
 ### Too many errors?
-Start with critical rules only:
+Start with all rules as warnings, then promote to errors as you fix them:
 ```javascript
 rules: {
-  "a11yinspect/img-element-error": "error",
-  "a11yinspect/a-element-error": "error",
-  "a11yinspect/button-element-error": "error"
+  ...Object.fromEntries(
+    Object.keys(a11yinspect.configs.recommended.rules).map(rule => [rule, "warn"])
+  )
+}
+```
+
+Or use the recommended config and disable specific rules you want to address later:
+```javascript
+rules: {
+  ...a11yinspect.configs.recommended.rules,
+  "a11yinspect/some-rule-error": "off"
 }
 ```
 
