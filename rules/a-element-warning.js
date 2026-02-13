@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      linkTextGenericClickHere: "⚠️ Link text is generic (click here, read more, etc)",
-      linkTextTooLong: "⚠️ Link accessible name exceeds 150 characters"
+      linkTextGenericClickHere: "⚠️ [Critical] Link text is generic (click here, read more, etc) (2.4.4 A)",
+      linkTextTooLong: "⚠️ [Best Practice] Link accessible name exceeds 150 characters (2.4.4 A)"
     },
     schema: []
   },

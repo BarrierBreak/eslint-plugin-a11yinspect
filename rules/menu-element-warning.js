@@ -7,7 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      menuContainMenuitemElements: "⚠️ menu should contain menuitem elements"
+      menuContainMenuitemElements: "⚠️ [Minor] menu should contain menuitem elements (1.3.1 A)",
+      menuMissingAccessibleName: "💡 [Best Practice] menu missing accessible name (4.1.2 A)"
     },
     schema: []
   },
@@ -38,6 +39,15 @@ module.exports = {
             (!roleAttr || !roleAttr.value || roleAttr.value.type !== "Literal" ||
              roleAttr.value.value !== "menu")) {
           return;
+        }
+
+        const ariaLabel = node.attributes.find(
+          attr => attr.type === "JSXAttribute" &&
+          (attr.name.name === "aria-label" || attr.name.name === "aria-labelledby")
+        );
+
+        if (!ariaLabel) {
+          context.report({ node, messageId: "menuMissingAccessibleName" });
         }
 
         const parent = node.parent;

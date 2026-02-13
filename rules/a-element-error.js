@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      linkAccessibleName: "❌ Link has no accessible name",
+      linkAccessibleName: "❌ [Critical] Link has no accessible name (2.4.4 A)",
       linkTextOnlyUrl: "❌ Link text is only a URL",
       linkMissingHrefAttribute: "❌ Link missing href attribute",
       linkHrefEmpty: "❌ Link href is empty or #"

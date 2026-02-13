@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      imgMissingAlt: "❌ img missing alt attribute",
-      imgEmptyAlt: "❌ img has empty alt",
-      imgMissingAltNoAria: "❌ img missing alt attribute and has no aria-label or aria-labelledby"
+      imgMissingAlt: "❌ [Critical] img missing alt attribute (1.1.1 A)",
+      imgEmptyAlt: "❌ [Critical] img has empty alt (1.1.1 A)",
+      imgMissingAltNoAria: "❌ [Critical] img missing alt attribute and has no aria-label or aria-labelledby (1.1.1 A)"
     },
     schema: []
   },

@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      buttonTextGeneric: "⚠️ Button text is generic",
+      buttonTextGeneric: "⚠️ [Major] Button text is generic (2.4.6 AA)",
       interactiveDivSpanButton: "⚠️ Interactive div/span should be a button"
     },
     schema: []

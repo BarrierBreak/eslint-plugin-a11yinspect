@@ -7,10 +7,10 @@ module.exports = {
       recommended: true
     },
     messages: {
-      imgAltRedundant: "💡 img alt is redundant (image/picture/photo)",
-      imgAltFilename: "⚠️ img alt contains filename",
-      imgAltTooLong: "⚠️ img alt too long (>150 chars)",
-      imgDecorative: "💡 img marked as decorative (role=presentation/none or aria-hidden=true) - verify if informative or decorative",
+      imgAltRedundant: "💡 [Minor] img alt is redundant (image/picture/photo) (1.1.1 A)",
+      imgAltFilename: "⚠️ [Major] img alt contains filename (1.1.1 A)",
+      imgAltTooLong: "⚠️ [Major] img alt too long (>150 chars) (1.1.1 A)",
+      imgDecorative: "💡 [Minor] img marked as decorative (role=presentation/none or aria-hidden=true) - verify if informative or decorative (1.1.1 A)",
       imgAltGeneric: "⚠️ img alt text is generic (image, graphic, picture, photo, spacer, etc.)"
     },
     schema: []

@@ -7,13 +7,14 @@ module.exports = {
       recommended: true
     },
     messages: {
-      pageHaveMainLandmark: "⚠️ Page should have main landmark",
+      landmarkMissingAccessibleName: "⚠️ [Minor] Landmark missing accessible name (1.3.1 A)",
       multipleMainLandmarksFound: "💡 Multiple main landmarks found",
-      pageHaveNavigationLandmark: "⚠️ Page should have navigation landmark"
+      pageHaveNavigationLandmark: "⚠️ [Major] Page should have navigation landmark (1.3.1 A)"
     },
     schema: []
   },
   create(context) {
+    const landmarksWithMultiple = ["navigation", "complementary", "region"];
     let mainCount = 0;
     let navFound = false;
 
@@ -37,11 +38,29 @@ module.exports = {
         if (node.name.name === "nav" || role === "navigation") {
           navFound = true;
         }
-      },
-      "Program:exit"() {
-        if (mainCount === 0) {
-          const program = context.getSourceCode().ast;
-          context.report({ node: program, messageId: "pageHaveMainLandmark" });
+
+        if (node.name.name === "nav" || role === "navigation") {
+          if (landmarksWithMultiple.includes(role)) {
+            const ariaLabel = node.attributes.find(
+              attr => attr.type === "JSXAttribute" &&
+              (attr.name.name === "aria-label" || attr.name.name === "aria-labelledby")
+            );
+
+            if (!ariaLabel) {
+              context.report({ node, messageId: "landmarkMissingAccessibleName" });
+            }
+          }
+        }
+
+        if (role && landmarksWithMultiple.includes(role)) {
+          const ariaLabel = node.attributes.find(
+            attr => attr.type === "JSXAttribute" &&
+            (attr.name.name === "aria-label" || attr.name.name === "aria-labelledby")
+          );
+
+          if (!ariaLabel) {
+            context.report({ node, messageId: "landmarkMissingAccessibleName" });
+          }
         }
       }
     };

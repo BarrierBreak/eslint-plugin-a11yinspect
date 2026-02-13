@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      buttonAccessibleName: "❌ Button has no accessible name",
+      buttonAccessibleName: "❌ [Critical] Button has no accessible name (4.1.2 A)",
       buttonMissingTypeAttribute: "❌ Button missing type attribute",
       buttonSvgMissingRoleImg: "❌ SVG inside button missing role=\"img\" attribute"
     },

@@ -7,12 +7,12 @@ module.exports = {
       recommended: true
     },
     messages: {
-      landmarkMissingAccessibleName: "❌ Landmark missing accessible name"
+      pageHaveMainLandmark: "❌ [Major] Page should have main landmark (1.3.1 A)"
     },
     schema: []
   },
   create(context) {
-    const landmarksWithMultiple = ["navigation", "complementary", "region"];
+    let mainCount = 0;
 
     return {
       JSXOpeningElement(node) {
@@ -24,28 +24,14 @@ module.exports = {
           ? roleAttr.value.value
           : null;
 
-        if (node.name.name === "nav" || role === "navigation") {
-          if (landmarksWithMultiple.includes(role)) {
-            const ariaLabel = node.attributes.find(
-              attr => attr.type === "JSXAttribute" &&
-              (attr.name.name === "aria-label" || attr.name.name === "aria-labelledby")
-            );
-
-            if (!ariaLabel) {
-              context.report({ node, messageId: "landmarkMissingAccessibleName" });
-            }
-          }
+        if (node.name.name === "main" || role === "main") {
+          mainCount++;
         }
-
-        if (role && landmarksWithMultiple.includes(role)) {
-          const ariaLabel = node.attributes.find(
-            attr => attr.type === "JSXAttribute" &&
-            (attr.name.name === "aria-label" || attr.name.name === "aria-labelledby")
-          );
-
-          if (!ariaLabel) {
-            context.report({ node, messageId: "landmarkMissingAccessibleName" });
-          }
+      },
+      "Program:exit"() {
+        if (mainCount === 0) {
+          const program = context.getSourceCode().ast;
+          context.report({ node: program, messageId: "pageHaveMainLandmark" });
         }
       }
     };

@@ -7,17 +7,14 @@ module.exports = {
       recommended: true
     },
     messages: {
-      headingLevelSkipped: "⚠️ Heading level skipped",
-      multipleH1: "⚠️ Multiple h1 elements on page",
+      multipleH1: "💡 [Best Practice] Multiple h1 elements on page (1.3.1 A)",
       headingOnlyImageNoAlt: "⚠️ Heading contains only image without alt",
       headingHiddenOrPresentation: "💡 Heading has role=presentation/none or aria-hidden=true",
-      headingTextTooLong: "⚠️ Heading text exceeds 120 characters or contains only special characters",
-      headingNested: "⚠️ Heading contains nested heading element"
+      headingTextTooLong: "⚠️ Heading text exceeds 120 characters or contains only special characters"
     },
     schema: []
   },
   create(context) {
-    const headingLevels = [];
     let h1Count = 0;
 
     function getTextContent(node) {
@@ -49,24 +46,6 @@ module.exports = {
               (altAttr.value.type === "Literal" && !altAttr.value.value)) {
             return true;
           }
-        }
-      }
-      return false;
-    }
-
-    function hasNestedHeading(children) {
-      for (const child of children) {
-        if (child.type === "JSXElement") {
-          const childTag = child.openingElement.name.name;
-          if (/^h[1-6]$/.test(childTag)) return true;
-          const childRole = child.openingElement.attributes.find(
-            attr => attr.type === "JSXAttribute" && attr.name.name === "role"
-          );
-          if (childRole && childRole.value && childRole.value.type === "Literal" &&
-              childRole.value.value === "heading") {
-            return true;
-          }
-          if (child.children && hasNestedHeading(child.children)) return true;
         }
       }
       return false;
@@ -114,21 +93,8 @@ module.exports = {
           return;
         }
 
-        if (headingLevels.length > 0) {
-          const lastLevel = headingLevels[headingLevels.length - 1];
-          if (level > lastLevel + 1) {
-            context.report({ node, messageId: "headingLevelSkipped" });
-          }
-        }
-
-        headingLevels.push(level);
-
         if (textContent.length > 120 || /^[^a-zA-Z0-9]+$/.test(textContent)) {
           context.report({ node, messageId: "headingTextTooLong" });
-        }
-
-        if (hasNestedHeading(parent.children)) {
-          context.report({ node, messageId: "headingNested" });
         }
       }
     };

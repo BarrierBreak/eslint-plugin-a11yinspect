@@ -7,14 +7,11 @@ module.exports = {
       recommended: true
     },
     messages: {
-      svgMissingName: "❌ SVG missing accessible name",
-      svgMissingRole: "❌ SVG missing role (no role=\"img\", \"graphics-document\", or \"graphics-symbol\")"
+      svgMissingName: "❌ SVG missing accessible name"
     },
     schema: []
   },
   create(context) {
-    const validSvgRoles = ["img", "graphics-document", "graphics-symbol"];
-
     function hasTitle(children) {
       return children.some(child =>
         child.type === "JSXElement" && child.openingElement.name.name === "title"
@@ -34,15 +31,9 @@ module.exports = {
         const ariaHidden = node.attributes.find(
           attr => attr.type === "JSXAttribute" && attr.name.name === "aria-hidden"
         );
-        const roleAttr = node.attributes.find(
-          attr => attr.type === "JSXAttribute" && attr.name.name === "role"
-        );
 
         const parent = node.parent;
         const title = parent.type === "JSXElement" ? hasTitle(parent.children) : false;
-
-        const role = roleAttr && roleAttr.value && roleAttr.value.type === "Literal"
-          ? roleAttr.value.value : null;
 
         if (ariaHidden && ariaHidden.value && ariaHidden.value.type === "Literal" &&
             (ariaHidden.value.value === "true" || ariaHidden.value.value === true)) {
@@ -51,11 +42,6 @@ module.exports = {
 
         const hasAriaLabel = ariaLabelAttr && ariaLabelAttr.value;
         const hasAriaLabelledBy = ariaLabelledByAttr && ariaLabelledByAttr.value;
-        const hasValidRole = role && validSvgRoles.includes(role);
-
-        if (!hasValidRole) {
-          context.report({ node, messageId: "svgMissingRole" });
-        }
 
         if (!hasAriaLabel && !hasAriaLabelledBy && !title) {
           context.report({ node, messageId: "svgMissingName" });

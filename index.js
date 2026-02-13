@@ -81,7 +81,6 @@ module.exports = {
     "footer-element-warning": require("./rules/footer-element-warning"),
     "ruby-element-error": require("./rules/ruby-element-error"),
     "ruby-element-warning": require("./rules/ruby-element-warning"),
-    "menu-element-error": require("./rules/menu-element-error"),
     "menu-element-warning": require("./rules/menu-element-warning"),
     "noscript-element-error": require("./rules/noscript-element-error"),
     "hr-element-warning": require("./rules/hr-element-warning"),
