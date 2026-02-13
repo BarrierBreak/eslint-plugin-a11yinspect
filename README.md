@@ -5,11 +5,11 @@
 [![npm version](https://img.shields.io/npm/v/@barrierbreak/eslint-plugin-a11yinspect.svg)](https://www.npmjs.com/package/@barrierbreak/eslint-plugin-a11yinspect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Static accessibility analysis for React/JSX with **93 rules** covering Web Content Accessibility Guideline (WCAG) guidelines, EN 301 549 and other accessibility standards. Catch accessibility issues at development time with zero runtime overhead.
+Static accessibility analysis for React/JSX with **92 rules** covering Web Content Accessibility Guideline (WCAG) guidelines, EN 301 549 and other accessibility standards. Catch accessibility issues at development time with zero runtime overhead.
 
 ## Features
 
-- **93 accessibility rules** (split into error and warning variants) across 10 categories
+- **92 accessibility rules** (split into error and warning variants) across 10 categories
 - **ESLint 7, 8, 9 compatible** - works with legacy and flat config
 - **Pure static analysis** - no browser, jsdom, or runtime required
 - **Framework agnostic** - React, Next.js, Vite, CRA
@@ -66,7 +66,7 @@ export default [
 ];
 ```
 
-That's it — all 93 rules are enabled with appropriate severity levels (`error` or `warn`).
+That's it — all 92 rules are enabled with appropriate severity levels (`error` or `warn`).
 
 ### ESLint 7-8 (.eslintrc)
 
@@ -78,14 +78,14 @@ Add to your `.eslintrc.json`:
 }
 ```
 
-This enables all 93 accessibility rules with appropriate severity levels (error rules as `error`, warning rules as `warn`).
+This enables all 92 accessibility rules with appropriate severity levels (error rules as `error`, warning rules as `warn`).
 
 ### Available Configs
 
 | Config | Description |
 |--------|-------------|
 | `recommended` | `-error` rules as `error`, `-warning` rules as `warn` (default, start here) |
-| `strict` | All 93 rules set to `error` — blocks CI on any issue |
+| `strict` | All 92 rules set to `error` — blocks CI on any issue |
 | `errors-only` | Only `-error` rules enabled, all `-warning` rules off |
 | `warnings-only` | Only `-warning` rules enabled (as `warn`), all `-error` rules off |
 
@@ -110,7 +110,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 
 ## Accessibility Rules Overview
 
-**93 rules** organized by category (split into error and warning variants):
+**92 rules** organized by category (split into error and warning variants):
 
 ### Images & Media
 
@@ -168,7 +168,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 
 | Rule | Default | Description |
 |------|---------|-------------|
-| `heading-element-error` | error | Heading hierarchy, hidden headings |
+| `heading-element-error` | error | Empty headings, heading hierarchy, nested headings |
 | `heading-element-warning` | warn | Heading improvements |
 | `lang-element-error` | error | Language attributes |
 | `title-element-error` | error | Page title |
@@ -206,7 +206,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 
 | Rule | Default | Description |
 |------|---------|-------------|
-| `landmark-element-error` | error | Landmark roles critical issues |
+| `landmark-element-error` | error | Missing main landmark |
 | `landmark-element-warning` | warn | Landmark recommendations |
 | `section-element-warning` | warn | Section elements |
 | `header-element-warning` | warn | Header elements |
@@ -229,8 +229,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `dialog-element-error` | error | Dialog/modal critical issues |
 | `dialog-element-warning` | warn | Dialog recommendations |
 | `details-element-error` | error | Details/summary elements |
-| `menu-element-error` | error | Menu element structure |
-| `menu-element-warning` | warn | Menu recommendations |
+| `menu-element-warning` | warn | Menu accessible names and structure |
 | `tab-element-warning` | warn | Tab, tablist, tabpanel roles |
 | `distracting-element-error` | error | No marquee/blink elements |
 

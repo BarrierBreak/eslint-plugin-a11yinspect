@@ -1,6 +1,6 @@
 // eslint.config.mjs
 // ESLint 9+ Flat Config with eslint-plugin-a11yinspect
-// All 93 accessibility rules enabled via recommended config
+// All 92 accessibility rules enabled via recommended config
 
 import a11yinspect from "eslint-plugin-a11yinspect";
 
