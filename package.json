@@ -6,6 +6,10 @@
     "author": "BarrierBreak <support@barrierbreak.com>",
     "license": "MIT",
     "homepage": "https://github.com/BarrierBreak/eslint-plugin-a11yinspect#readme",
+    "publishConfig": {
+        "access": "public",
+        "provenance": true
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/BarrierBreak/eslint-plugin-a11yinspect.git"
