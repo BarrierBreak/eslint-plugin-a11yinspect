@@ -1,0 +1,7 @@
+scally/
+.eslintrc.json
+eslint.config.mjs
+COMPLETE-CONFIG-GUIDE.md
+.git/
+.gitignore
+node_modules/
