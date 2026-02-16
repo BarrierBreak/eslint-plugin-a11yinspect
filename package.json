@@ -10,10 +10,6 @@
         "type": "git",
         "url": "git+https://github.com/BarrierBreak/eslint-plugin-a11yinspect.git"
     },
-    "publishConfig": {
-        "access": "public",
-        "provenance": true
-    },
     "bugs": {
         "url": "https://github.com/BarrierBreak/eslint-plugin-a11yinspect/issues"
     },
