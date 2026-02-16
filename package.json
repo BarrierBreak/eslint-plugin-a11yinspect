@@ -1,48 +1,52 @@
 {
-  "name": "@barrierbreak/eslint-plugin-a11yinspect",
-  "version": "1.0.5",
-  "description": "ESLint plugin for comprehensive static accessibility analysis - 92 rules covering images, forms, ARIA, landmarks, tables, and semantic HTML",
-  "main": "index.js",
-  "author": "BarrierBreak <support@barrierbreak.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/BarrierBreak/eslint-plugin-a11yinspect#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BarrierBreak/eslint-plugin-a11yinspect.git"
-  },
-  "bugs": {
-    "url": "https://github.com/BarrierBreak/eslint-plugin-a11yinspect/issues"
-  },
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "a11y",
-    "accessibility",
-    "wcag",
-    "wcag2.1",
-    "aria",
-    "jsx",
-    "react",
-    "nextjs",
-    "static-analysis",
-    "semantic-html",
-    "screen-reader",
-    "barrierbreak"
-  ],
-  "files": [
-    "index.js",
-    "rules/",
-    "README.md",
-    "LICENSE"
-  ],
-  "peerDependencies": {
-    "eslint": ">=7.0.0"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+    "name": "@barrierbreak/eslint-plugin-a11yinspect",
+    "version": "1.0.5",
+    "description": "ESLint plugin for comprehensive static accessibility analysis - 92 rules covering images, forms, ARIA, landmarks, tables, and semantic HTML",
+    "main": "index.js",
+    "author": "BarrierBreak <support@barrierbreak.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/BarrierBreak/eslint-plugin-a11yinspect#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BarrierBreak/eslint-plugin-a11yinspect.git"
+    },
+    "publishConfig": {
+        "access": "public",
+        "provenance": true
+    },
+    "bugs": {
+        "url": "https://github.com/BarrierBreak/eslint-plugin-a11yinspect/issues"
+    },
+    "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "a11y",
+        "accessibility",
+        "wcag",
+        "wcag2.1",
+        "aria",
+        "jsx",
+        "react",
+        "nextjs",
+        "static-analysis",
+        "semantic-html",
+        "screen-reader",
+        "barrierbreak"
+    ],
+    "files": [
+        "index.js",
+        "rules/",
+        "README.md",
+        "LICENSE"
+    ],
+    "peerDependencies": {
+        "eslint": ">=7.0.0"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
 }
