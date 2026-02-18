@@ -1,6 +1,6 @@
 {
     "name": "@barrierbreak/eslint-plugin-a11yinspect",
-    "version": "1.0.11",
+    "version": "1.0.12",
     "description": "ESLint plugin for comprehensive static accessibility analysis - 92 rules covering images, forms, ARIA, landmarks, tables, and semantic HTML",
     "main": "index.js",
     "author": "BarrierBreak <support@barrierbreak.com>",
