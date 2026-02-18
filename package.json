@@ -7,8 +7,7 @@
     "license": "MIT",
     "homepage": "https://github.com/BarrierBreak/eslint-plugin-a11yinspect#readme",
     "publishConfig": {
-        "access": "public",
-        "provenance": true
+        "access": "public"
     },
     "repository": {
         "type": "git",
