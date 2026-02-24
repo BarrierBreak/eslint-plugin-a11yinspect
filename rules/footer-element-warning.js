@@ -7,7 +7,6 @@ module.exports = {
       recommended: true
     },
     messages: {
-      footerContentinfoLandmarkAtPage: "⚠️ footer should be contentinfo landmark at page level",
       multipleContentinfoLandmarksFound: "💡 Multiple contentinfo landmarks found"
     },
     schema: []

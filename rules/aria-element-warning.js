@@ -7,10 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      ariaLabelledbyReferencesNonExistent: "⚠️ aria-labelledby references non-existent id",
       ariaHiddenFocusableElement: "⚠️ aria-hidden on focusable element",
       ariaRoleRedundant: "💡 Element has ARIA role that matches its implicit default role",
-      ariaRoleInvalidForElement: "⚠️ ARIA role is not allowed on this element type",
       ariaInvalidPropValue: "⚠️ Invalid value for ARIA attribute",
       preferSemanticElement: "💡 Prefer semantic HTML element over ARIA role",
       noninteractiveElementInteractiveRole: "⚠️ Non-interactive element should not have interactive ARIA role",

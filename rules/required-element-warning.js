@@ -7,7 +7,6 @@ module.exports = {
       recommended: true
     },
     messages: {
-      requiredFieldMissingAriaRequired: "❌ Required field missing aria-required or required",
       requiredFieldHaveVisualIndicator: "⚠️ Required field should have visual indicator"
     },
     schema: []

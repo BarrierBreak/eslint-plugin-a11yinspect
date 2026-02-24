@@ -9,7 +9,6 @@ module.exports = {
     messages: {
       svgMissingRole: "💡 [Best Practice] SVG missing role (no role=\"img\", \"graphics-document\", or \"graphics-symbol\") (4.1.2 A)",
       svgShouldHaveRoleImg: "⚠️ SVG should have role img",
-      svgDecorativeNeedsAriaHidden: "💡 [Minor] Decorative SVG should have aria-hidden (1.1.1 A)",
       svgAriaLabelNoRole: "💡 SVG has aria-label but no appropriate role attribute",
       svgRoleImgNoDescription: "⚠️ [Major] SVG with role=\"img\" missing accessible description (no aria-label, title child, or aria-labelledby) (1.1.1 A)",
       svgGenericDescription: "⚠️ [Minor] SVG accessible description uses generic text (1.1.1 A)"

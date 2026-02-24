@@ -6,9 +6,7 @@ module.exports = {
       category: "Accessibility",
       recommended: true
     },
-    messages: {
-      labelAttributeReferencesNonExistent: "⚠️ Label for attribute references non-existent id"
-    },
+    messages: {},
     schema: []
   },
   create(context) {

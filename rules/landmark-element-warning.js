@@ -8,8 +8,7 @@ module.exports = {
     },
     messages: {
       landmarkMissingAccessibleName: "⚠️ [Minor] Landmark missing accessible name (1.3.1 A)",
-      multipleMainLandmarksFound: "💡 Multiple main landmarks found",
-      pageHaveNavigationLandmark: "⚠️ [Major] Page should have navigation landmark (1.3.1 A)"
+      multipleMainLandmarksFound: "💡 Multiple main landmarks found"
     },
     schema: []
   },

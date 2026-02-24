@@ -7,7 +7,6 @@ module.exports = {
       recommended: true
     },
     messages: {
-      contentLockedSpecificOrientation: "⚠️ Content should not be locked to specific orientation",
       invalidAriaOrientationValue: "❌ Invalid aria-orientation value"
     },
     schema: []

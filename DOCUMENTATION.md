@@ -184,7 +184,7 @@ module.exports = {
 | `img-element-error` | error | Missing `alt`, empty `alt` (non-decorative images) |
 | `img-element-warning` | warn | Decorative image patterns, alt text quality guidance |
 | `svg-element-error` | error | SVG missing `role="img"` or accessible name |
-| `svg-element-warning` | warn | Generic SVG descriptions |
+| `svg-element-warning` | warn | SVG missing role, role="img" without accessible name, or generic description text |
 | `media-element-error` | error | `<audio>`/`<video>` missing critical accessibility attributes |
 | `media-element-warning` | warn | Media accessibility recommendations |
 | `track-element-error` | error | Missing subtitle/caption `<track>` on video |
@@ -217,8 +217,8 @@ module.exports = {
 | `input-element-error` | error | `<input>` without associated label or `aria-label` |
 | `input-element-warning` | warn | Input accessibility improvements |
 | `label-element-error` | error | `<label>` without `for`/`htmlFor` or wrapping an input |
-| `label-element-warning` | warn | Label improvements |
-| `select-element-error` | error | `<select>` without accessible label |
+| `label-element-warning` | warn | Label for-attribute forward-reference checks (placeholder — not yet implemented) |
+| `select-element-error` | error | `<select>` missing accessible label, name attribute, or options |
 | `textarea-element-error` | error | `<textarea>` without accessible label |
 | `textarea-element-warning` | warn | Textarea improvements |
 | `form-element-error` | error | Form missing accessible name or structure issues |
@@ -226,7 +226,7 @@ module.exports = {
 | `optgroup-element-error` | error | `<optgroup>` missing `label` attribute |
 | `autocomplete-element-error` | error | Invalid `autocomplete` attribute values |
 | `autocomplete-element-warning` | warn | Autocomplete usage recommendations |
-| `required-element-warning` | warn | `required`/`aria-required` usage patterns |
+| `required-element-warning` | warn | Required fields should have a visible indicator when `required` or `aria-required="true"` is set |
 | `area-element-error` | error | Image map `<area>` missing `alt` |
 
 ### Document Structure (11 rules)
@@ -262,7 +262,7 @@ module.exports = {
 | `selected-element-warning` | warn | `aria-selected` usage |
 | `pressed-element-warning` | warn | `aria-pressed` on non-button elements |
 | `live-region-error` | error | Invalid `aria-live` values |
-| `orientation-element-error` | error | `aria-orientation` on roles that don't support it |
+| `orientation-element-error` | error | Invalid `aria-orientation` attribute values (must be "horizontal" or "vertical") |
 | `accesskey-element-error` | error | Duplicate `accessKey` values |
 | `accesskey-element-warning` | warn | `accessKey` usage guidance |
 | `autofocus-element-warning` | warn | Use of the `autoFocus` attribute |
@@ -274,8 +274,8 @@ module.exports = {
 | `landmark-element-error` | error | Page missing a `<main>` or `role="main"` landmark |
 | `landmark-element-warning` | warn | Landmark usage recommendations |
 | `section-element-warning` | warn | `<section>` without accessible name |
-| `header-element-warning` | warn | `<header>` misuse or missing context |
-| `footer-element-warning` | warn | `<footer>` misuse or missing context |
+| `header-element-warning` | warn | Multiple banner landmarks (more than one `<header>` at page level) |
+| `footer-element-warning` | warn | Multiple contentinfo landmarks (more than one `<footer>` at page level) |
 | `meta-element-error` | error | `<meta name="viewport">` with `user-scalable=no` or `maximum-scale=1` |
 | `meta-element-warning` | warn | Meta tag recommendations |
 
@@ -291,7 +291,7 @@ module.exports = {
 
 | Rule | Severity | What it checks |
 |---|---|---|
-| `dialog-element-error` | error | `<dialog>` missing `aria-modal` or accessible name |
+| `dialog-element-error` | error | `<dialog>` element or `role="dialog/alertdialog"` missing accessible name (aria-label or aria-labelledby) |
 | `dialog-element-warning` | warn | Dialog accessibility improvements |
 | `details-element-error` | error | `<details>` missing `<summary>` child |
 | `menu-element-warning` | warn | `role="menu"` missing accessible name or proper structure |
@@ -314,7 +314,7 @@ module.exports = {
 | `meter-element-error` | error | `<meter>` missing accessible label |
 | `progress-element-error` | error | `<progress>` missing accessible label |
 | `output-element-error` | error | `<output>` missing `for`/`htmlFor` association |
-| `object-element-error` | error | `<object>` missing accessible fallback |
+| `object-element-error` | error | `<object>` missing `type` attribute or fallback content |
 | `embed-element-error` | error | `<embed>` missing accessible alternative |
 | `map-element-error` | error | `<map>` missing `name` attribute |
 | `noscript-element-error` | error | `<noscript>` missing meaningful fallback content |

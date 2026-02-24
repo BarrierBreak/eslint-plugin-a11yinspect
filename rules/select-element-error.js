@@ -9,8 +9,7 @@ module.exports = {
     messages: {
       selectMissingAssociatedLabel: "❌ Select missing associated label",
       selectMissingNameAttribute: "❌ Select missing name attribute",
-      selectOptions: "❌ Select has no options",
-      firstOptionEmptyPrompt: "❌ First option should be empty or prompt"
+      selectOptions: "❌ Select has no options"
     },
     schema: []
   },

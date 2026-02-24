@@ -7,7 +7,6 @@ module.exports = {
       recommended: true
     },
     messages: {
-      headerBannerLandmarkAtPage: "⚠️ header should be banner landmark at page level",
       multipleBannerLandmarksFound: "💡 Multiple banner landmarks found"
     },
     schema: []

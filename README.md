@@ -119,7 +119,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `img-element-error` | error | Alt text missing, generic alt detection |
 | `img-element-warning` | warn | Decorative images, alt text quality |
 | `svg-element-error` | error | SVG roles, accessible names |
-| `svg-element-warning` | warn | SVG generic descriptions |
+| `svg-element-warning` | warn | SVG missing role, accessible name, or generic description |
 | `media-element-error` | error | Audio/video critical accessibility |
 | `media-element-warning` | warn | Audio/video recommendations |
 | `track-element-error` | error | Subtitle/caption tracks |
@@ -152,8 +152,8 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `input-element-error` | error | Input types and attributes |
 | `input-element-warning` | warn | Input accessibility improvements |
 | `label-element-error` | error | Label associations |
-| `label-element-warning` | warn | Label improvements |
-| `select-element-error` | error | Select/dropdown elements |
+| `label-element-warning` | warn | Label for-attribute cross-reference (placeholder) |
+| `select-element-error` | error | Select missing label, name attribute, or options |
 | `textarea-element-error` | error | Textarea elements |
 | `textarea-element-warning` | warn | Textarea improvements |
 | `form-element-error` | error | Form structure critical issues |
@@ -161,7 +161,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `optgroup-element-error` | error | Option groups |
 | `autocomplete-element-error` | error | Autocomplete attributes |
 | `autocomplete-element-warning` | warn | Autocomplete recommendations |
-| `required-element-warning` | warn | Required attributes |
+| `required-element-warning` | warn | Required field visual indicator |
 | `area-element-error` | error | Image map areas |
 
 ### Document Structure
@@ -197,7 +197,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `selected-element-warning` | warn | aria-selected states |
 | `pressed-element-warning` | warn | aria-pressed states |
 | `live-region-error` | error | aria-live regions |
-| `orientation-element-error` | error | aria-orientation |
+| `orientation-element-error` | error | Invalid aria-orientation values |
 | `accesskey-element-error` | error | Accesskey critical issues |
 | `accesskey-element-warning` | warn | Accesskey recommendations |
 | `autofocus-element-warning` | warn | Avoid autoFocus attribute |
@@ -209,8 +209,8 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `landmark-element-error` | error | Missing main landmark |
 | `landmark-element-warning` | warn | Landmark recommendations |
 | `section-element-warning` | warn | Section elements |
-| `header-element-warning` | warn | Header elements |
-| `footer-element-warning` | warn | Footer elements |
+| `header-element-warning` | warn | Multiple banner landmarks |
+| `footer-element-warning` | warn | Multiple contentinfo landmarks |
 | `meta-element-error` | error | Viewport zoom critical issues |
 | `meta-element-warning` | warn | Meta recommendations |
 
@@ -226,7 +226,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 
 | Rule | Default | Description |
 |------|---------|-------------|
-| `dialog-element-error` | error | Dialog/modal critical issues |
+| `dialog-element-error` | error | Dialog/alertdialog role or element missing accessible name |
 | `dialog-element-warning` | warn | Dialog recommendations |
 | `details-element-error` | error | Details/summary elements |
 | `menu-element-warning` | warn | Menu accessible names and structure |
@@ -249,7 +249,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `meter-element-error` | error | Meter elements |
 | `progress-element-error` | error | Progress elements |
 | `output-element-error` | error | Output elements |
-| `object-element-error` | error | Embedded content |
+| `object-element-error` | error | Object missing type attribute or fallback content |
 | `embed-element-error` | error | Embedded content |
 | `map-element-error` | error | Image maps |
 | `noscript-element-error` | error | Noscript fallbacks |

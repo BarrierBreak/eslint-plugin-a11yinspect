@@ -7,8 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      dialogMissingAccessibleName: "❌ Dialog missing accessible name",
-      dialogMissingRoleDialogAlertdialog: "❌ Dialog missing role dialog or alertdialog"
+      dialogMissingAccessibleName: "❌ Dialog missing accessible name"
     },
     schema: []
   },

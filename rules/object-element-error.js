@@ -8,8 +8,7 @@ module.exports = {
     },
     messages: {
       objectMissingFallbackContent: "❌ object missing fallback content",
-      objectMissingTypeAttribute: "❌ object missing type attribute",
-      objectMissingAccessibleName: "❌ object missing accessible name"
+      objectMissingTypeAttribute: "❌ object missing type attribute"
     },
     schema: []
   },
