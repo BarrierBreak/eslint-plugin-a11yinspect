@@ -8,7 +8,6 @@ module.exports = {
     },
     messages: {
       metaViewportDisablesZoom: "❌ meta viewport disables zoom",
-      metaViewportMaxScaleRestrictive: "❌ meta viewport maximum-scale too restrictive",
       viewportUserScalableNo: "❌ Viewport meta tag has user-scalable=no or user-scalable=0",
       viewportMaxScaleLow: "❌ Viewport meta tag has maximum-scale less than 2"
     },
@@ -42,7 +41,6 @@ module.exports = {
                 if (maxScaleMatch) {
                   const maxScale = parseFloat(maxScaleMatch[1]);
                   if (maxScale < 2) {
-                    context.report({ node: contentAttr, messageId: "metaViewportMaxScaleRestrictive" });
                     context.report({ node: contentAttr, messageId: "viewportMaxScaleLow" });
                   }
                 }

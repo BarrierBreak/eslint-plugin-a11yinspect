@@ -7,8 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      buttonTextGeneric: "⚠️ [Major] Button text is generic (2.4.6 AA)",
-      interactiveDivSpanButton: "⚠️ Interactive div/span should be a button"
+      buttonTextGeneric: "⚠️ [Major] Button text is generic (2.4.6 AA)"
     },
     schema: []
   },
@@ -52,21 +51,6 @@ module.exports = {
           }
         }
 
-        if (node.name.name === "div" || node.name.name === "span") {
-          const hasClickHandler = node.attributes.some(
-            attr => attr.type === "JSXAttribute" && /^on(Click|KeyDown|KeyPress|KeyUp)$/i.test(attr.name.name)
-          );
-
-          if (hasClickHandler) {
-            const hasRole = node.attributes.some(
-              attr => attr.type === "JSXAttribute" && attr.name.name === "role"
-            );
-
-            if (!hasRole) {
-              context.report({ node, messageId: "interactiveDivSpanButton" });
-            }
-          }
-        }
       }
     };
   }

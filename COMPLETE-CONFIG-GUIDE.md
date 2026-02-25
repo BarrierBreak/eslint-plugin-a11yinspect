@@ -20,7 +20,7 @@ npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-de
 | Config | Description | Use case |
 |--------|-------------|----------|
 | **`recommended`** | `-error` rules as `error`, `-warning` rules as `warn` | Default — start here |
-| **`strict`** | All 96 rules set to `error` | CI enforcement — block on any issue |
+| **`strict`** | All 89 rules set to `error` | CI enforcement — block on any issue |
 | **`errors-only`** | Only `-error` rules enabled, `-warning` rules off | Focus on critical issues first |
 | **`warnings-only`** | Only `-warning` rules enabled as `warn`, `-error` rules off | Awareness mode — no build failures |
 
@@ -28,7 +28,7 @@ npm install @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-de
 
 ## Configuration Files
 
-### 1. ESLint 9+ (Recommended) - All 96 Rules
+### 1. ESLint 9+ (Recommended) - All 89 Rules
 
 **File: `eslint.config.mjs`** — copy-paste and go:
 
@@ -56,7 +56,7 @@ export default [
 ];
 ```
 
-This enables all 96 rules with the correct severity (`error` or `warn`).
+This enables all 89 rules with the correct severity (`error` or `warn`).
 
 Swap `recommended` for any other config:
 
@@ -108,7 +108,7 @@ rules: {
 }
 ```
 
-This enables all 96 rules. Swap `recommended` for any other config:
+This enables all 89 rules. Swap `recommended` for any other config:
 
 ```json
 { "extends": ["plugin:@barrierbreak/a11yinspect/strict"] }

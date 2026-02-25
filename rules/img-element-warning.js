@@ -8,7 +8,6 @@ module.exports = {
     },
     messages: {
       imgAltFilename: "⚠️ [Major] img alt contains filename (1.1.1 A)",
-      imgAltTooLong: "⚠️ [Major] img alt too long (>150 chars) (1.1.1 A)",
       imgDecorative: "💡 [Minor] img marked as decorative (role=presentation/none or aria-hidden=true) - verify if informative or decorative (1.1.1 A)",
       imgAltGeneric: "⚠️ img alt text is generic (image, graphic, picture, photo, spacer, etc.)",
       imgMissingSrc: "⚠️ img element missing src attribute (1.1.1 A)",
@@ -101,9 +100,6 @@ module.exports = {
             return;
           }
 
-          if (altText.length > 150) {
-            context.report({ node: altAttr, messageId: "imgAltTooLong" });
-          }
         }
       }
     };

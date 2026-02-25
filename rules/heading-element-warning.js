@@ -10,7 +10,6 @@ module.exports = {
       multipleH1: "💡 [Best Practice] Multiple h1 elements on page (1.3.1 A)",
       headingOnlyImageNoAlt: "⚠️ Heading contains only image without alt",
       headingHiddenOrPresentation: "💡 Heading has role=presentation/none or aria-hidden=true",
-      headingTextTooLong: "⚠️ Heading text exceeds 120 characters or contains only special characters",
       headingRoleMissingAriaLevel: "💡 Element with role=\"heading\" missing aria-level attribute (1.3.1 A)"
     },
     schema: []
@@ -108,9 +107,6 @@ module.exports = {
           return;
         }
 
-        if (textContent.length > 120 || /^[^a-zA-Z0-9]+$/.test(textContent)) {
-          context.report({ node, messageId: "headingTextTooLong" });
-        }
       }
     };
   }

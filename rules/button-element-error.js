@@ -8,7 +8,6 @@ module.exports = {
     },
     messages: {
       buttonAccessibleName: "❌ [Critical] Button has no accessible name (4.1.2 A)",
-      buttonMissingTypeAttribute: "❌ Button missing type attribute",
       buttonSvgMissingRoleImg: "❌ SVG inside button missing role=\"img\" attribute",
       buttonSvgHiddenFromAT: "❌ SVG inside button with role=\"presentation\"/\"none\" or aria-hidden=true hides content from assistive technology",
       buttonSvgMissingLabel: "❌ SVG inside button with role=\"img\" missing accessible name (aria-label or aria-labelledby) (1.1.1 A)",
@@ -58,14 +57,6 @@ module.exports = {
     return {
       JSXOpeningElement(node) {
         if (node.name.name === "button") {
-          const typeAttr = node.attributes.find(
-            attr => attr.type === "JSXAttribute" && attr.name.name === "type"
-          );
-
-          if (!typeAttr) {
-            context.report({ node, messageId: "buttonMissingTypeAttribute" });
-          }
-
           const ariaLabel = node.attributes.find(
             attr => attr.type === "JSXAttribute" &&
             (attr.name.name === "aria-label" || attr.name.name === "aria-labelledby")

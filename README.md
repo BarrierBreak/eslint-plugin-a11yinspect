@@ -5,11 +5,11 @@
 [![npm version](https://img.shields.io/npm/v/@barrierbreak/eslint-plugin-a11yinspect.svg)](https://www.npmjs.com/package/@barrierbreak/eslint-plugin-a11yinspect)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Static accessibility analysis for React/JSX with **96 rules** covering Web Content Accessibility Guideline (WCAG) guidelines, EN 301 549 and other accessibility standards. Catch accessibility issues at development time with zero runtime overhead.
+Static accessibility analysis for React/JSX with **89 rules** covering Web Content Accessibility Guideline (WCAG) guidelines, EN 301 549 and other accessibility standards. Catch accessibility issues at development time with zero runtime overhead.
 
 ## Features
 
-- **96 accessibility rules** (split into error and warning variants) across 10 categories
+- **89 accessibility rules** (split into error and warning variants) across 10 categories
 - **ESLint 7, 8, 9 compatible** - works with legacy and flat config
 - **Pure static analysis** - no browser, jsdom, or runtime required
 - **Framework agnostic** - React, Next.js, Vite, CRA
@@ -66,7 +66,7 @@ export default [
 ];
 ```
 
-That's it — all 96 rules are enabled with appropriate severity levels (`error` or `warn`).
+That's it — all 89 rules are enabled with appropriate severity levels (`error` or `warn`).
 
 ### ESLint 7-8 (.eslintrc)
 
@@ -78,14 +78,14 @@ Add to your `.eslintrc.json`:
 }
 ```
 
-This enables all 96 accessibility rules with appropriate severity levels (error rules as `error`, warning rules as `warn`).
+This enables all 89 accessibility rules with appropriate severity levels (error rules as `error`, warning rules as `warn`).
 
 ### Available Configs
 
 | Config | Description |
 |--------|-------------|
 | `recommended` | `-error` rules as `error`, `-warning` rules as `warn` (default, start here) |
-| `strict` | All 96 rules set to `error` — blocks CI on any issue |
+| `strict` | All 89 rules set to `error` — blocks CI on any issue |
 | `errors-only` | Only `-error` rules enabled, all `-warning` rules off |
 | `warnings-only` | Only `-warning` rules enabled (as `warn`), all `-error` rules off |
 
@@ -110,7 +110,7 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 
 ## Accessibility Rules Overview
 
-**96 rules** organized by category (split into error and warning variants):
+**89 rules** organized by category (split into error and warning variants):
 
 ### Images & Media
 
@@ -172,7 +172,6 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `heading-element-warning` | warn | Heading improvements |
 | `lang-element-error` | error | Language attributes |
 | `title-element-error` | error | Page title |
-| `title-element-warning` | warn | Title improvements |
 | `iframe-element-error` | error | Iframe titles, hidden iframes |
 | `iframe-element-warning` | warn | Iframe improvements |
 | `list-element-error` | error | List structure critical issues |
@@ -199,7 +198,6 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `live-region-error` | error | aria-live regions |
 | `orientation-element-error` | error | Invalid aria-orientation values |
 | `accesskey-element-error` | error | Accesskey critical issues |
-| `accesskey-element-warning` | warn | Accesskey recommendations |
 | `autofocus-element-warning` | warn | Avoid autoFocus attribute |
 
 ### Landmarks
@@ -209,8 +207,6 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `landmark-element-error` | error | Missing main landmark |
 | `landmark-element-warning` | warn | Landmark recommendations |
 | `section-element-warning` | warn | Section elements |
-| `header-element-warning` | warn | Multiple banner landmarks |
-| `footer-element-warning` | warn | Multiple contentinfo landmarks |
 | `meta-element-error` | error | Viewport zoom critical issues |
 | `meta-element-warning` | warn | Meta recommendations |
 
@@ -243,8 +239,6 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `abbr-element-error` | error | Abbreviations |
 | `time-element-error` | error | Time elements |
 | `blockquote-element-warning` | warn | Blockquote citations |
-| `ins-del-element-warning` | warn | Inserted/deleted content |
-| `address-element-error` | error | Address elements |
 | `ruby-element-error` | error | Ruby annotations |
 | `ruby-element-warning` | warn | Ruby recommendations |
 | `hr-element-warning` | warn | Horizontal rules |
@@ -256,7 +250,6 @@ Replace `recommended` with `strict`, `errors-only`, or `warnings-only` as needed
 | `embed-element-error` | error | Embedded content |
 | `map-element-error` | error | Image maps |
 | `map-element-warning` | warn | Map element with aria-hidden |
-| `noscript-element-error` | error | Noscript fallbacks |
 
 ## Accessibility Examples
 

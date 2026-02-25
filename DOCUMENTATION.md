@@ -31,7 +31,7 @@
 | Dimension | Detail |
 |---|---|
 | Standards | WCAG 2.1 (A / AA), EN 301 549, ARIA 1.2 |
-| Total rules | **96** (split into `-error` and `-warning` variants) |
+| Total rules | **89** (split into `-error` and `-warning` variants) |
 | Analysis target | JSX/TSX AST nodes — no DOM, no runtime, no jsdom |
 | Framework support | React, Next.js, Vite, CRA, any JSX toolchain |
 | TypeScript | Full `.tsx` support (pair with `@typescript-eslint/parser`) |
@@ -173,7 +173,7 @@ module.exports = {
 
 ## 5. Rule Catalogue
 
-96 rules organised by the category they cover.
+89 rules organised by the category they cover.
 
 ### Images & Media (9 rules)
 
@@ -227,7 +227,7 @@ module.exports = {
 | `required-element-warning` | warn | Required fields should have a visible indicator when `required` or `aria-required="true"` is set |
 | `area-element-error` | error | Image map `<area>` missing `alt` |
 
-### Document Structure (11 rules)
+### Document Structure (9 rules)
 
 | Rule | Severity | What it checks |
 |---|---|---|
@@ -235,7 +235,6 @@ module.exports = {
 | `heading-element-warning` | warn | Heading hierarchy recommendations |
 | `lang-element-error` | error | `<html>` missing `lang` attribute |
 | `title-element-error` | error | Missing or empty `<title>` |
-| `title-element-warning` | warn | Title quality improvements |
 | `iframe-element-error` | error | `<iframe>` missing `title` or empty `title` |
 | `iframe-element-warning` | warn | Iframe accessibility improvements |
 | `list-element-error` | error | `<ul>`/`<ol>` with no `<li>` children |
@@ -243,7 +242,7 @@ module.exports = {
 | `dl-element-error` | error | `<dl>` structure violations |
 | `duplicate-id-error` | error | Duplicate `id` attributes within a file |
 
-### ARIA (17 rules)
+### ARIA (16 rules)
 
 | Rule | Severity | What it checks |
 |---|---|---|
@@ -262,18 +261,15 @@ module.exports = {
 | `live-region-error` | error | Invalid `aria-live` values |
 | `orientation-element-error` | error | Invalid `aria-orientation` attribute values (must be "horizontal" or "vertical") |
 | `accesskey-element-error` | error | Duplicate `accessKey` values |
-| `accesskey-element-warning` | warn | `accessKey` usage guidance |
 | `autofocus-element-warning` | warn | Use of the `autoFocus` attribute |
 
-### Landmarks (7 rules)
+### Landmarks (5 rules)
 
 | Rule | Severity | What it checks |
 |---|---|---|
 | `landmark-element-error` | error | Page missing a `<main>` or `role="main"` landmark |
 | `landmark-element-warning` | warn | Landmark usage recommendations |
 | `section-element-warning` | warn | `<section>` without accessible name |
-| `header-element-warning` | warn | Multiple banner landmarks (more than one `<header>` at page level) |
-| `footer-element-warning` | warn | Multiple contentinfo landmarks (more than one `<footer>` at page level) |
 | `meta-element-error` | error | `<meta name="viewport">` with `user-scalable=no` or `maximum-scale=1` |
 | `meta-element-warning` | warn | Meta tag recommendations |
 
@@ -298,7 +294,7 @@ module.exports = {
 | `tab-element-warning` | warn | `role="tab"`, `tablist`, `tabpanel` structure |
 | `distracting-element-error` | error | `<marquee>` and `<blink>` elements |
 
-### Semantic HTML (18 rules)
+### Semantic HTML (15 rules)
 
 | Rule | Severity | What it checks |
 |---|---|---|
@@ -306,8 +302,6 @@ module.exports = {
 | `abbr-element-error` | error | `<abbr>` missing `title` attribute |
 | `time-element-error` | error | `<time>` missing `dateTime` attribute |
 | `blockquote-element-warning` | warn | `<blockquote>` missing `cite` attribute |
-| `ins-del-element-warning` | warn | `<ins>`/`<del>` accessible context |
-| `address-element-error` | error | `<address>` containing non-contact content |
 | `ruby-element-error` | error | `<ruby>` missing `<rt>` pronunciation text |
 | `ruby-element-warning` | warn | Ruby annotation recommendations |
 | `hr-element-warning` | warn | Decorative `<hr>` vs. semantic separator |
@@ -319,7 +313,6 @@ module.exports = {
 | `embed-element-error` | error | `<embed>` missing accessible alternative |
 | `map-element-error` | error | `<map>` missing `name` attribute or empty name |
 | `map-element-warning` | warn | `<map>` with `aria-hidden=true` |
-| `noscript-element-error` | error | `<noscript>` missing meaningful fallback content |
 
 ---
 
