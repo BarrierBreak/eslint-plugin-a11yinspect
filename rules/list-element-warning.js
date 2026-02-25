@@ -7,11 +7,11 @@ module.exports = {
       recommended: true
     },
     messages: {
-      listInvalidChildren: "⚠️ ul/ol contains non-li children",
-      listInvalidElement: "⚠️ Non-li element with text content nested directly in ul/ol",
-      listRedundantRoleList: "💡 ul/ol element has redundant role=\"list\" (implicit default)",
-      listitemRedundantRole: "💡 li element has redundant role=\"listitem\" (implicit default)",
-      listAriaHidden: "⚠️ List element or list item with aria-hidden=true is hidden from assistive technology"
+      listInvalidChildren: "⚠️ [Minor] ul/ol contains non-li children (1.3.1 A)",
+      listInvalidElement: "⚠️ [Minor] Non-li element with text content nested directly in ul/ol (1.3.1 A)",
+      listRedundantRoleList: "💡 [Best Practice] ul/ol element has redundant role=\"list\" (implicit default) (1.3.1 A)",
+      listitemRedundantRole: "💡 [Best Practice] li element has redundant role=\"listitem\" (implicit default) (1.3.1 A)",
+      listAriaHidden: "⚠️ [Major] List element or list item with aria-hidden=true is hidden from assistive technology (1.3.1 A)"
     },
     schema: []
   },

@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      selectMissingAssociatedLabel: "❌ Select missing associated label",
-      selectMissingNameAttribute: "❌ Select missing name attribute",
-      selectOptions: "❌ Select has no options"
+      selectMissingAssociatedLabel: "❌ [Major] Select missing associated label (4.1.2 A)",
+      selectMissingNameAttribute: "❌ [Best Practice] Select missing name attribute (4.1.2 A)",
+      selectOptions: "❌ [Best Practice] Select has no options (4.1.2 A)"
     },
     schema: []
   },

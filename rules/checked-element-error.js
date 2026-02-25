@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      checkboxRadioMissingNameAttribute: "❌ Checkbox/radio missing name attribute"
+      checkboxRadioMissingNameAttribute: "❌ [Best Practice] Checkbox/radio missing name attribute (1.3.1 A)"
     },
     schema: []
   },

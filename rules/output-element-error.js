@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      outputMissingAccessibleName: "❌ output missing accessible name"
+      outputMissingAccessibleName: "❌ [Best Practice] output missing accessible name (4.1.2 A)"
     },
     schema: []
   },

@@ -8,8 +8,8 @@ module.exports = {
     },
     messages: {
       landmarkMissingAccessibleName: "⚠️ [Minor] Landmark missing accessible name (1.3.1 A)",
-      multipleMainLandmarksFound: "💡 Multiple main landmarks found",
-      landmarkAriaHidden: "⚠️ Landmark element with aria-hidden=true is hidden from assistive technology (1.3.1 A)"
+      multipleMainLandmarksFound: "💡 [Best Practice] Multiple main landmarks found (1.3.1 A)",
+      landmarkAriaHidden: "⚠️ [Major] Landmark element with aria-hidden=true is hidden from assistive technology (1.3.1 A)"
     },
     schema: []
   },

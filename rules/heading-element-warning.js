@@ -8,9 +8,9 @@ module.exports = {
     },
     messages: {
       multipleH1: "💡 [Best Practice] Multiple h1 elements on page (1.3.1 A)",
-      headingOnlyImageNoAlt: "⚠️ Heading contains only image without alt",
-      headingHiddenOrPresentation: "💡 Heading has role=presentation/none or aria-hidden=true",
-      headingRoleMissingAriaLevel: "💡 Element with role=\"heading\" missing aria-level attribute (1.3.1 A)"
+      headingOnlyImageNoAlt: "⚠️ [Minor] Heading contains only image without alt (1.3.1 A)",
+      headingHiddenOrPresentation: "⚠️ [Minor] Heading has role=presentation/none or aria-hidden=true (1.3.1 A)",
+      headingRoleMissingAriaLevel: "⚠️ [Minor] Element with role=\"heading\" missing aria-level attribute (1.3.1 A)"
     },
     schema: []
   },

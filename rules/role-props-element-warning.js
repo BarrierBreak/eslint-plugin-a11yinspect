@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      roleUnsupportedProp: "⚠️ ARIA property is not supported by this role"
+      roleUnsupportedProp: "⚠️ [Major] ARIA property is not supported by this role (4.1.2 A)"
     },
     schema: []
   },

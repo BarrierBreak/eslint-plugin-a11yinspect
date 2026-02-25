@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      mapAriaHidden: "⚠️ map element with aria-hidden=true is hidden from assistive technology"
+      mapAriaHidden: "⚠️ [Major] map element with aria-hidden=true is hidden from assistive technology (1.1.1 A)"
     },
     schema: []
   },

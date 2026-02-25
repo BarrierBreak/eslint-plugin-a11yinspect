@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      timeElementMissingDatetimeAttribute: "❌ time element missing datetime attribute"
+      timeElementMissingDatetimeAttribute: "❌ [Best Practice] time element missing datetime attribute (1.3.1 A)"
     },
     schema: []
   },

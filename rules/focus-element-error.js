@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      activedescendantNotFocusable: "❌ Element with aria-activedescendant must be focusable (add tabIndex)",
-      unnecessaryTabindex: "❌ Redundant tabindex=0 on natively focusable element — remove it (4.1.2 A)"
+      activedescendantNotFocusable: "❌ [Blocker] Element with aria-activedescendant must be focusable (add tabIndex) (2.1.1 A)",
+      unnecessaryTabindex: "❌ [Major] Redundant tabindex=0 on natively focusable element — remove it (2.4.3 A)"
     },
     schema: []
   },

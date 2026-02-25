@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      canvasMissingRoleImg: "❌ Canvas element missing role=\"img\" attribute"
+      canvasMissingRoleImg: "❌ [Blocker] Canvas element missing role=\"img\" attribute (4.1.2 A)"
     },
     schema: []
   },

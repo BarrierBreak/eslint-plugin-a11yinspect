@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      duplicateAccesskey: "❌ Duplicate accesskey value found"
+      duplicateAccesskey: "❌ [Best Practice] Duplicate accesskey value found (2.1.1 A)"
     },
     schema: []
   },

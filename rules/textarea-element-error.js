@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      textareaMissingAssociatedLabel: "❌ Textarea missing associated label",
-      textareaMissingNameAttribute: "❌ Textarea missing name attribute"
+      textareaMissingAssociatedLabel: "❌ [Major] Textarea missing associated label (1.3.1 A)",
+      textareaMissingNameAttribute: "❌ [Best Practice] Textarea missing name attribute (1.3.1 A)"
     },
     schema: []
   },

@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      videoElementMissingCaptions: "❌ video element missing captions",
-      audioElementMissingTranscript: "❌ audio element missing transcript",
-      videoElementMissingAudioDescription: "❌ video element missing audio description"
+      videoElementMissingCaptions: "❌ [Critical] video element missing captions (1.2.2 A)",
+      audioElementMissingTranscript: "❌ [Major] audio element missing transcript (1.2.1 A)",
+      videoElementMissingAudioDescription: "❌ [Major] video element missing audio description (1.2.5 AA)"
     },
     schema: []
   },

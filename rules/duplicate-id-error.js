@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      duplicateIdAttributeFound: "❌ Duplicate id attribute found"
+      duplicateIdAttributeFound: "❌ [Minor] Duplicate id attribute found (4.1.1 A)"
     },
     schema: []
   },

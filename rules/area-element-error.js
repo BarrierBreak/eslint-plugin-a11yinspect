@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      areaMissingAltAttribute: "❌ area missing alt attribute",
-      areaEmptyAlt: "❌ area has empty alt",
-      areaMissingHrefAttribute: "❌ area missing href attribute"
+      areaMissingAltAttribute: "❌ [Critical] area missing alt attribute (2.4.4 A)",
+      areaEmptyAlt: "❌ [Critical] area has empty alt (2.4.4 A)",
+      areaMissingHrefAttribute: "❌ [Blocker] area missing href attribute (2.1.1 A)"
     },
     schema: []
   },

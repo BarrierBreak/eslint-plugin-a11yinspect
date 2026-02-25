@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      invalidAutocompleteValue: "❌ Invalid autocomplete value"
+      invalidAutocompleteValue: "❌ [Major] Invalid autocomplete value (1.3.5 AA)"
     },
     schema: []
   },

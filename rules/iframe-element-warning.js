@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      iframeHidden: "💡 iframe is hidden (role=presentation/none or aria-hidden=true)"
+      iframeHidden: "⚠️ [Major] iframe is hidden (role=presentation/none or aria-hidden=true) (4.1.2 A)"
     },
     schema: []
   },

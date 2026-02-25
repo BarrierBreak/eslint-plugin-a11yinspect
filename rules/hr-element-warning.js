@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      hrHaveRoleSeparatorPresentation: "⚠️ hr should have role separator or presentation"
+      hrHaveRoleSeparatorPresentation: "💡 [Best Practice] hr should have role separator or presentation (1.3.1 A)"
     },
     schema: []
   },

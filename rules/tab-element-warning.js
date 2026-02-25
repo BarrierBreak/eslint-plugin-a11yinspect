@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      tabMissingAriaControls: "⚠️ Element with role=\"tab\" missing aria-controls attribute",
-      tabpanelMissingAccessibleName: "⚠️ Element with role=\"tabpanel\" missing accessible name (no aria-label or aria-labelledby)",
-      tablistMissingAccessibleName: "⚠️ Element with role=\"tablist\" missing accessible name (no aria-label or aria-labelledby)"
+      tabMissingAriaControls: "💡 [Best Practice] Element with role=\"tab\" missing aria-controls attribute (4.1.2 A)",
+      tabpanelMissingAccessibleName: "💡 [Best Practice] Element with role=\"tabpanel\" missing accessible name (no aria-label or aria-labelledby) (4.1.2 A)",
+      tablistMissingAccessibleName: "💡 [Best Practice] Element with role=\"tablist\" missing accessible name (no aria-label or aria-labelledby) (4.1.2 A)"
     },
     schema: []
   },

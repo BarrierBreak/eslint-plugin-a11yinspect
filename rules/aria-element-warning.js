@@ -7,12 +7,12 @@ module.exports = {
       recommended: true
     },
     messages: {
-      ariaHiddenFocusableElement: "⚠️ aria-hidden on focusable element",
-      ariaRoleRedundant: "💡 Element has ARIA role that matches its implicit default role",
-      ariaInvalidPropValue: "⚠️ Invalid value for ARIA attribute",
-      preferSemanticElement: "💡 Prefer semantic HTML element over ARIA role",
-      noninteractiveElementInteractiveRole: "⚠️ Non-interactive element should not have interactive ARIA role",
-      interactiveElementNoninteractiveRole: "⚠️ Interactive element should not have non-interactive ARIA role"
+      ariaHiddenFocusableElement: "⚠️ [Critical] aria-hidden on focusable element (4.1.2 A)",
+      ariaRoleRedundant: "💡 [Best Practice] Element has ARIA role that matches its implicit default role (4.1.2 A)",
+      ariaInvalidPropValue: "⚠️ [Major] Invalid value for ARIA attribute (4.1.2 A)",
+      preferSemanticElement: "💡 [Best Practice] Prefer semantic HTML element over ARIA role (4.1.2 A)",
+      noninteractiveElementInteractiveRole: "⚠️ [Critical] Non-interactive element should not have interactive ARIA role (4.1.2 A)",
+      interactiveElementNoninteractiveRole: "⚠️ [Critical] Interactive element should not have non-interactive ARIA role (4.1.2 A)"
     },
     schema: []
   },

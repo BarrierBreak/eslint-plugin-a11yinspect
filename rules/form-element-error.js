@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      formMissingAccessibleName: "❌ Form missing accessible name",
-      fieldsetMissingLegend: "❌ Fieldset missing legend"
+      formMissingAccessibleName: "❌ [Minor] Form missing accessible name (1.3.1 A)",
+      fieldsetMissingLegend: "❌ [Minor] Fieldset missing legend (1.3.1 A)"
     },
     schema: []
   },

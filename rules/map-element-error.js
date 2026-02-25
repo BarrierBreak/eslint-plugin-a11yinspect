@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      mapMissingNameAttribute: "❌ map missing name attribute",
-      mapAreaChildren: "❌ map has no area children",
-      mapEmptyNameAttribute: "❌ map name attribute is empty"
+      mapMissingNameAttribute: "❌ [Best Practice] map missing name attribute (1.1.1 A)",
+      mapAreaChildren: "❌ [Best Practice] map has no area children (1.1.1 A)",
+      mapEmptyNameAttribute: "❌ [Minor] map name attribute is empty (1.1.1 A)"
     },
     schema: []
   },

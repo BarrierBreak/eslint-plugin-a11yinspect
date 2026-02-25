@@ -7,10 +7,10 @@ module.exports = {
       recommended: true
     },
     messages: {
-      liOrphan: "❌ li element not inside ul/ol/menu",
-      listNoItems: "❌ List (ul/ol or role=list) has no li or listitem children",
-      listEmptyItem: "❌ List contains empty li elements",
-      liNestedInLi: "❌ li element incorrectly nested inside another li"
+      liOrphan: "❌ [Major] li element not inside ul/ol/menu (1.3.1 A)",
+      listNoItems: "❌ [Major] List (ul/ol or role=list) has no li or listitem children (1.3.1 A)",
+      listEmptyItem: "❌ [Minor] List contains empty li elements (1.3.1 A)",
+      liNestedInLi: "❌ [Major] li element incorrectly nested inside another li (1.3.1 A)"
     },
     schema: []
   },

@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      metaViewportDisablesZoom: "❌ meta viewport disables zoom",
-      viewportUserScalableNo: "❌ Viewport meta tag has user-scalable=no or user-scalable=0",
-      viewportMaxScaleLow: "❌ Viewport meta tag has maximum-scale less than 2"
+      metaViewportDisablesZoom: "❌ [Minor] meta viewport disables zoom (1.4.4 AA)",
+      viewportUserScalableNo: "❌ [Major] Viewport meta tag has user-scalable=no or user-scalable=0 (1.4.4 AA)",
+      viewportMaxScaleLow: "❌ [Major] Viewport meta tag has maximum-scale less than 2 (1.4.4 AA)"
     },
     schema: []
   },

@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      inputPlaceholderLabelSubstitute: "⚠️ [Major] Input placeholder is not a label substitute (3.3.2 A)"
+      inputPlaceholderLabelSubstitute: "⚠️ [Major] Input placeholder is not a label substitute (1.3.1 A)"
     },
     schema: []
   },

@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      ariaLiveRegionMissingAria: "❌ aria-live region missing aria-atomic",
-      invalidAriaLiveValue: "❌ Invalid aria-live value"
+      ariaLiveRegionMissingAria: "❌ [Major] aria-live region missing aria-atomic (4.1.2 A)",
+      invalidAriaLiveValue: "❌ [Major] Invalid aria-live value (4.1.2 A)"
     },
     schema: []
   },

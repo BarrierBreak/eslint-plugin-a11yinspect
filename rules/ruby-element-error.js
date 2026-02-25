@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      rubyMissingRtElement: "❌ ruby missing rt element"
+      rubyMissingRtElement: "❌ [Minor] ruby missing rt element (3.1.2 AA)"
     },
     schema: []
   },

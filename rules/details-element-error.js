@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      detailsElementMissingSummaryChild: "❌ details element missing summary child",
-      summaryElementInsideDetails: "❌ summary element not inside details"
+      detailsElementMissingSummaryChild: "❌ [Major] details element missing summary child (1.3.1 A)",
+      summaryElementInsideDetails: "❌ [Major] summary element not inside details (1.3.1 A)"
     },
     schema: []
   },

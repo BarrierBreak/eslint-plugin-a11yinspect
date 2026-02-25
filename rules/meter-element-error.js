@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      meterMissingAccessibleName: "❌ meter missing accessible name",
-      meterMissingMinMaxAttributes: "❌ meter missing min/max attributes"
+      meterMissingAccessibleName: "❌ [Critical] meter missing accessible name (4.1.2 A)",
+      meterMissingMinMaxAttributes: "❌ [Best Practice] meter missing min/max attributes (4.1.2 A)"
     },
     schema: []
   },

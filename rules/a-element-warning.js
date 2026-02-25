@@ -9,7 +9,7 @@ module.exports = {
     messages: {
       linkTextGenericClickHere: "⚠️ [Critical] Link text is generic (click here, read more, etc) (2.4.4 A)",
       linkTextTooLong: "⚠️ [Best Practice] Link accessible name exceeds 150 characters (2.4.4 A)",
-      linkTabindexNegative: "⚠️ Link has tabindex=-1 making it unreachable by keyboard navigation (2.1.1 A)"
+      linkTabindexNegative: "⚠️ [Major] Link has tabindex=-1 making it unreachable by keyboard navigation (2.1.1 A)"
     },
     schema: []
   },

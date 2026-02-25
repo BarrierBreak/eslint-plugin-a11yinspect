@@ -8,7 +8,7 @@ module.exports = {
     },
     messages: {
       menuContainMenuitemElements: "⚠️ [Minor] menu should contain menuitem elements (1.3.1 A)",
-      menuMissingAccessibleName: "💡 [Best Practice] menu missing accessible name (4.1.2 A)"
+      menuMissingAccessibleName: "⚠️ [Minor] menu missing accessible name (4.1.2 A)"
     },
     schema: []
   },

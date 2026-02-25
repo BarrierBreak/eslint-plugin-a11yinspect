@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      textareaPlaceholderLabelSubstitute: "⚠️ Textarea placeholder is not a label substitute"
+      textareaPlaceholderLabelSubstitute: "⚠️ [Major] Textarea placeholder is not a label substitute (1.3.1 A)"
     },
     schema: []
   },

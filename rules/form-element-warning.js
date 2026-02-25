@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      formHaveSubmitButton: "⚠️ Form should have submit button"
+      formHaveSubmitButton: "💡 [Best Practice] Form should have submit button (3.2.2 A)"
     },
     schema: []
   },

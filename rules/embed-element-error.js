@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      embedMissingAccessibleName: "❌ embed missing accessible name",
-      embedMissingTypeAttribute: "❌ embed missing type attribute"
+      embedMissingAccessibleName: "❌ [Major] embed missing accessible name (4.1.2 A)",
+      embedMissingTypeAttribute: "❌ [Best Practice] embed missing type attribute (4.1.2 A)"
     },
     schema: []
   },

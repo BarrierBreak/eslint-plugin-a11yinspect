@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      modalDialogTrapFocus: "⚠️ Modal dialog should trap focus",
-      dialogAriaHidden: "⚠️ dialog/alertdialog element with aria-hidden=true is hidden from assistive technology"
+      modalDialogTrapFocus: "⚠️ [Major] Modal dialog should trap focus (2.4.3 A)",
+      dialogAriaHidden: "⚠️ [Major] dialog/alertdialog element with aria-hidden=true is hidden from assistive technology (4.1.2 A)"
     },
     schema: []
   },

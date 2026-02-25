@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      abbrElementMissingTitleAttribute: "❌ abbr element missing title attribute"
+      abbrElementMissingTitleAttribute: "❌ [Minor] abbr element missing title attribute (3.1.4 AAA)"
     },
     schema: []
   },

@@ -7,10 +7,10 @@ module.exports = {
       recommended: true
     },
     messages: {
-      mediaElementAutoplay: "⚠️ media element has autoplay",
-      mediaRoleWithControls: "💡 audio/video with controls attribute should not have a role attribute",
-      audioAriaHidden: "⚠️ audio element with aria-hidden=true is hidden from assistive technology (1.1.1 A)",
-      videoAriaHidden: "⚠️ video element with aria-hidden=true or tabindex=-1 is inaccessible (1.1.1 A)"
+      mediaElementAutoplay: "⚠️ [Critical] media element has autoplay (1.4.2 A)",
+      mediaRoleWithControls: "⚠️ [Major] audio/video with controls attribute should not have a role attribute (4.1.2 A)",
+      audioAriaHidden: "⚠️ [Major] audio element with aria-hidden=true is hidden from assistive technology (1.1.1 A)",
+      videoAriaHidden: "⚠️ [Major] video element with aria-hidden=true or tabindex=-1 is inaccessible (1.1.1 A)"
     },
     schema: []
   },

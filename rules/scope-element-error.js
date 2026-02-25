@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      thMissingScopeAttribute: "❌ th missing scope attribute",
-      invalidScopeValue: "❌ Invalid scope value"
+      thMissingScopeAttribute: "❌ [Minor] th missing scope attribute (1.3.1 A)",
+      invalidScopeValue: "❌ [Minor] Invalid scope value (1.3.1 A)"
     },
     schema: []
   },

@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      ariaSelectedTrueFalse: "⚠️ aria-selected should be true or false",
-      optionElementHaveValueAttribute: "⚠️ option element should have value attribute"
+      ariaSelectedTrueFalse: "⚠️ [Major] aria-selected should be true or false (4.1.2 A)",
+      optionElementHaveValueAttribute: "💡 [Best Practice] option element should have value attribute (4.1.2 A)"
     },
     schema: []
   },

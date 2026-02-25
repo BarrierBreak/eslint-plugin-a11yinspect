@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      rubyHaveRpFallback: "⚠️ ruby should have rp for fallback"
+      rubyHaveRpFallback: "⚠️ [Minor] ruby should have rp for fallback (4.1.2 A)"
     },
     schema: []
   },

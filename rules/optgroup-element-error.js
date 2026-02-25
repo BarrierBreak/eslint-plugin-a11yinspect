@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      optgroupMissingLabelAttribute: "❌ optgroup missing label attribute",
-      optgroupEmptyLabel: "❌ optgroup has empty label"
+      optgroupMissingLabelAttribute: "❌ [Best Practice] optgroup missing label attribute (1.3.1 A)",
+      optgroupEmptyLabel: "❌ [Best Practice] optgroup has empty label (1.3.1 A)"
     },
     schema: []
   },

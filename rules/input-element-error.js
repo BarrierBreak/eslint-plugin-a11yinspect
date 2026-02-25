@@ -8,9 +8,9 @@ module.exports = {
     },
     messages: {
       inputMissingAssociatedLabel: "❌ [Major] Input missing associated label (1.3.1 A)",
-      inputMissingTypeAttribute: "❌ Input missing type attribute",
+      inputMissingTypeAttribute: "❌ [Best Practice] Input missing type attribute (1.3.1 A)",
       inputTypeImageMissingAlt: "❌ [Critical] Input[type=image] missing alt attribute (1.1.1 A)",
-      inputMissingNameAttribute: "❌ Input missing name attribute"
+      inputMissingNameAttribute: "❌ [Best Practice] Input missing name attribute (1.3.1 A)"
     },
     schema: []
   },

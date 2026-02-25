@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      elementAriaDescribedbyReferencesNon: "⚠️ Element with aria-describedby references non-existent id"
+      elementAriaDescribedbyReferencesNon: "⚠️ [Major] Element with aria-describedby references non-existent id (4.1.2 A)"
     },
     schema: []
   },

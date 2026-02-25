@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      sectionHaveHeading: "⚠️ section should have heading",
-      sectionHaveAccessibleName: "⚠️ section should have accessible name"
+      sectionHaveHeading: "⚠️ [Major] section should have heading (1.3.1 A)",
+      sectionHaveAccessibleName: "⚠️ [Major] section should have accessible name (1.3.1 A)"
     },
     schema: []
   },

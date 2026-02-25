@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      invalidAriaOrientationValue: "❌ Invalid aria-orientation value"
+      invalidAriaOrientationValue: "❌ [Major] Invalid aria-orientation value (4.1.2 A)"
     },
     schema: []
   },

@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      trackMissingSrcAttribute: "❌ track missing src attribute",
-      trackMissingKindAttribute: "❌ track missing kind attribute",
-      trackMissingSrclangSubtitles: "❌ track missing srclang for subtitles"
+      trackMissingSrcAttribute: "❌ [Best Practice] track missing src attribute (1.2.1 A)",
+      trackMissingKindAttribute: "❌ [Best Practice] track missing kind attribute (1.2.2 A)",
+      trackMissingSrclangSubtitles: "❌ [Major] track missing srclang for subtitles (1.2.2 A)"
     },
     schema: []
   },

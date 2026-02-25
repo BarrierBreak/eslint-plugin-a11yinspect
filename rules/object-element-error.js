@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      objectMissingFallbackContent: "❌ object missing fallback content",
-      objectMissingTypeAttribute: "❌ object missing type attribute"
+      objectMissingFallbackContent: "❌ [Best Practice] object missing fallback content (1.1.1 A)",
+      objectMissingTypeAttribute: "❌ [Best Practice] object missing type attribute (1.1.1 A)"
     },
     schema: []
   },

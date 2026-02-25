@@ -7,15 +7,15 @@ module.exports = {
       recommended: true
     },
     messages: {
-      tableMissingCaptionSummary: "❌ Table missing caption or summary",
-      tableMissingTh: "❌ Table missing th elements",
-      tableMissingHeaders: "❌ Table missing column/row headers (no th, role=columnheader, or role=rowheader)",
-      tableEmptyHeader: "❌ Empty table header (th with no content)",
-      tableMissingCaption: "❌ Table missing caption element",
-      tdMissingTrParent: "❌ td element is not inside a tr element (1.3.1 A)",
-      thMissingTrParent: "❌ th element is not inside a tr element (1.3.1 A)",
-      trMissingTableParent: "❌ tr element is not inside a table, thead, tbody, or tfoot element (1.3.1 A)",
-      tableDeprecatedSummary: "❌ table summary attribute is deprecated — use caption element or aria-label instead"
+      tableMissingCaptionSummary: "❌ [Minor] Table missing caption or summary (1.3.1 A)",
+      tableMissingTh: "❌ [Major] Table missing th elements (1.3.1 A)",
+      tableMissingHeaders: "❌ [Major] Table missing column/row headers (no th, role=columnheader, or role=rowheader) (1.3.1 A)",
+      tableEmptyHeader: "❌ [Major] Empty table header (th with no content) (1.3.1 A)",
+      tableMissingCaption: "❌ [Minor] Table missing caption element (1.3.1 A)",
+      tdMissingTrParent: "❌ [Major] td element is not inside a tr element (1.3.1 A)",
+      thMissingTrParent: "❌ [Major] th element is not inside a tr element (1.3.1 A)",
+      trMissingTableParent: "❌ [Major] tr element is not inside a table, thead, tbody, or tfoot element (1.3.1 A)",
+      tableDeprecatedSummary: "❌ [Minor] table summary attribute is deprecated — use caption element or aria-label instead (1.3.1 A)"
     },
     schema: []
   },

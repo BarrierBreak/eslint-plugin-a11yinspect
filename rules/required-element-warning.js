@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      requiredFieldHaveVisualIndicator: "⚠️ Required field should have visual indicator"
+      requiredFieldHaveVisualIndicator: "⚠️ [Major] Required field should have visual indicator (3.3.2 A)"
     },
     schema: []
   },

@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      ariaDescriptionEmpty: "❌ aria-description is empty"
+      ariaDescriptionEmpty: "❌ [Minor] aria-description is empty (4.1.2 A)"
     },
     schema: []
   },

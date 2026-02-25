@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      objectAriaHidden: "⚠️ object element with aria-hidden=true is hidden from assistive technology"
+      objectAriaHidden: "⚠️ [Major] object element with aria-hidden=true is hidden from assistive technology (1.1.1 A)"
     },
     schema: []
   },

@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      onclickWithoutOnkeydownOnkeyup: "⚠️ onClick without onKeyDown/onKeyUp",
-      mouseEventWithoutKeyboardEquivalent: "⚠️ Mouse event without keyboard equivalent"
+      onclickWithoutOnkeydownOnkeyup: "⚠️ [Critical] onClick without onKeyDown/onKeyUp (2.1.1 A)",
+      mouseEventWithoutKeyboardEquivalent: "⚠️ [Critical] Mouse event without keyboard equivalent (2.1.1 A)"
     },
     schema: []
   },

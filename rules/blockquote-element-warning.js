@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      blockquoteHaveCiteAttributeAttribution: "⚠️ blockquote should have cite attribute for attribution"
+      blockquoteHaveCiteAttributeAttribution: "💡 [Best Practice] blockquote should have cite attribute for attribution (1.3.1 A)"
     },
     schema: []
   },

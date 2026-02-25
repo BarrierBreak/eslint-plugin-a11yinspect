@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      htmlElementMissingLangAttribute: "❌ html element missing lang attribute",
-      invalidLangAttributeValue: "❌ Invalid lang attribute value",
-      emptyLangAttribute: "❌ Empty lang attribute"
+      htmlElementMissingLangAttribute: "❌ [Major] html element missing lang attribute (3.1.1 A)",
+      invalidLangAttributeValue: "❌ [Major] Invalid lang attribute value (3.1.1 A)",
+      emptyLangAttribute: "❌ [Major] Empty lang attribute (3.1.1 A)"
     },
     schema: []
   },

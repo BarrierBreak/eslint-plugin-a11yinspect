@@ -7,11 +7,11 @@ module.exports = {
       recommended: true
     },
     messages: {
-      dlContainsInvalidChildren: "❌ dl contains invalid children",
-      dtDdInsideDl: "❌ dt/dd not inside dl",
-      dtNotFirstChildOfDl: "❌ dt element is not the first child element of dl",
-      dlMissingDdElement: "❌ dl element has dt but is missing dd (definition) children",
-      dlEmptyTerm: "❌ dl contains empty dt or dd element"
+      dlContainsInvalidChildren: "❌ [Minor] dl contains invalid children (1.3.1 A)",
+      dtDdInsideDl: "❌ [Minor] dt/dd not inside dl (1.3.1 A)",
+      dtNotFirstChildOfDl: "❌ [Minor] dt element is not the first child element of dl (1.3.1 A)",
+      dlMissingDdElement: "❌ [Minor] dl element has dt but is missing dd (definition) children (1.3.1 A)",
+      dlEmptyTerm: "❌ [Minor] dl contains empty dt or dd element (1.3.1 A)"
     },
     schema: []
   },

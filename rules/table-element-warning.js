@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      tableSummaryCaptionMatch: "💡 Table summary attribute text matches caption text (should differ)",
-      tableRolePresentation: "⚠️ table element has role=\"none\" or \"presentation\" — verify this is a layout table and not a data table (1.3.1 A)"
+      tableSummaryCaptionMatch: "💡 [Best Practice] Table summary attribute text matches caption text (should differ) (1.3.1 A)",
+      tableRolePresentation: "⚠️ [Minor] table element has role=\"none\" or \"presentation\" — verify this is a layout table and not a data table (1.3.1 A)"
     },
     schema: []
   },

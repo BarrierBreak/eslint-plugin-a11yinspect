@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      positiveTabindexValueFound: "💡 Positive tabindex value found",
-      elementTabindexButRole: "⚠️ Element has tabindex but no role",
-      interactiveRoleNotFocusable: "⚠️ Element with interactive role must be focusable (add tabIndex)"
+      positiveTabindexValueFound: "⚠️ [Major] Positive tabindex value found (2.4.3 A)",
+      elementTabindexButRole: "⚠️ [Major] Element has tabindex but no role (4.1.2 A)",
+      interactiveRoleNotFocusable: "⚠️ [Blocker] Element with interactive role must be focusable (add tabIndex) (2.1.1 A)"
     },
     schema: []
   },

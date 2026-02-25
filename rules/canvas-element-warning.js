@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      canvasDecorative: "💡 Canvas marked as decorative - verify if informative or decorative",
-      canvasMissingDescription: "⚠️ Canvas with role=\"img\" missing accessible description (no aria-label, aria-labelledby, or text content)",
-      canvasHasDescription: "💡 Canvas element has accessible description - verify it is accurate"
+      canvasDecorative: "⚠️ [Minor] Canvas marked as decorative - verify if informative or decorative (1.1.1 A)",
+      canvasMissingDescription: "⚠️ [Blocker] Canvas with role=\"img\" missing accessible description (no aria-label, aria-labelledby, or text content) (1.1.1 A)",
+      canvasHasDescription: "⚠️ [Major] Canvas element has accessible description - verify it is accurate (1.1.1 A)"
     },
     schema: []
   },

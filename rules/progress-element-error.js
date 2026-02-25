@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      progressMissingAccessibleName: "❌ progress missing accessible name",
-      progressMissingMax: "❌ progress element missing max attribute",
-      progressEmptyMax: "❌ progress element has empty max attribute"
+      progressMissingAccessibleName: "❌ [Critical] progress missing accessible name (4.1.2 A)",
+      progressMissingMax: "❌ [Best Practice] progress element missing max attribute (4.1.2 A)",
+      progressEmptyMax: "❌ [Best Practice] progress element has empty max attribute (4.1.2 A)"
     },
     schema: []
   },

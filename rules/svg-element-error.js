@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      svgMissingName: "❌ SVG missing accessible name"
+      svgMissingName: "❌ [Major] SVG missing accessible name (1.1.1 A)"
     },
     schema: []
   },

@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      inputHaveAutocompleteAttribute: "⚠️ Input should have autocomplete attribute"
+      inputHaveAutocompleteAttribute: "⚠️ [Major] Input should have autocomplete attribute (1.3.5 AA)"
     },
     schema: []
   },

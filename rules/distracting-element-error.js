@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      noMarquee: "❌ Do not use <marquee> - it cannot be paused and violates WCAG 2.2.2",
-      noBlink: "❌ Do not use <blink> - it cannot be paused and violates WCAG 2.2.2"
+      noMarquee: "❌ [Critical] Do not use <marquee> - it cannot be paused and violates WCAG 2.2.2 (2.2.2 A)",
+      noBlink: "❌ [Critical] Do not use <blink> - it cannot be paused and violates WCAG 2.2.2 (2.2.2 A)"
     },
     schema: []
   },

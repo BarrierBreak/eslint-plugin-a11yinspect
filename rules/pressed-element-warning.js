@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      ariaPressedTrueFalseMixed: "⚠️ aria-pressed should be true, false, or mixed"
+      ariaPressedTrueFalseMixed: "⚠️ [Major] aria-pressed should be true, false, or mixed (4.1.2 A)"
     },
     schema: []
   },

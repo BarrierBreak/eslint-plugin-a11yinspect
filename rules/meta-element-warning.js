@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      metaRefreshTimeout: "💡 meta refresh with timeout found",
-      metaRefreshDetected: "💡 Meta http-equiv=\"refresh\" detected"
+      metaRefreshTimeout: "⚠️ [Critical] meta refresh with timeout found (2.2.1 A)",
+      metaRefreshDetected: "⚠️ [Critical] Meta http-equiv=\"refresh\" detected (2.2.4 AAA)"
     },
     schema: []
   },

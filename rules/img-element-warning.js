@@ -7,11 +7,11 @@ module.exports = {
       recommended: true
     },
     messages: {
-      imgAltFilename: "⚠️ [Major] img alt contains filename (1.1.1 A)",
-      imgDecorative: "💡 [Minor] img marked as decorative (role=presentation/none or aria-hidden=true) - verify if informative or decorative (1.1.1 A)",
-      imgAltGeneric: "⚠️ img alt text is generic (image, graphic, picture, photo, spacer, etc.)",
-      imgMissingSrc: "⚠️ img element missing src attribute (1.1.1 A)",
-      iconMissingRoleImg: "⚠️ Icon element (<i>) missing role=\"img\" attribute (1.1.1 A)"
+      imgAltFilename: "⚠️ [Minor] img alt contains filename (1.1.1 A)",
+      imgDecorative: "⚠️ [Minor] img marked as decorative (role=presentation/none or aria-hidden=true) - verify if informative or decorative (1.1.1 A)",
+      imgAltGeneric: "⚠️ [Minor] img alt text is generic (image, graphic, picture, photo, spacer, etc.) (1.1.1 A)",
+      imgMissingSrc: "⚠️ [Major] img element missing src attribute (1.1.1 A)",
+      iconMissingRoleImg: "⚠️ [Minor] Icon element (<i>) missing role=\"img\" attribute (1.1.1 A)"
     },
     schema: []
   },

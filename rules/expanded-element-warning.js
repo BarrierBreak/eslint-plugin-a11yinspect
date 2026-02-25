@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      ariaExpandedTrueFalse: "⚠️ aria-expanded should be true or false",
-      ariaControlsReferencesNonExistent: "⚠️ aria-controls references non-existent id"
+      ariaExpandedTrueFalse: "⚠️ [Major] aria-expanded should be true or false (4.1.2 A)",
+      ariaControlsReferencesNonExistent: "⚠️ [Major] aria-controls references non-existent id (4.1.2 A)"
     },
     schema: []
   },

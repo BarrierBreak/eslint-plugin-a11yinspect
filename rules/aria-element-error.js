@@ -7,9 +7,9 @@ module.exports = {
       recommended: true
     },
     messages: {
-      emptyAriaLabelAttribute: "❌ Empty aria-label attribute",
-      invalidAriaRole: "❌ Invalid ARIA role",
-      ariaInvalidProp: "❌ Invalid ARIA attribute (unknown aria-* property)"
+      emptyAriaLabelAttribute: "❌ [Major] Empty aria-label attribute (4.1.2 A)",
+      invalidAriaRole: "❌ [Major] Invalid ARIA role (4.1.2 A)",
+      ariaInvalidProp: "❌ [Major] Invalid ARIA attribute (unknown aria-* property) (4.1.2 A)"
     },
     schema: []
   },

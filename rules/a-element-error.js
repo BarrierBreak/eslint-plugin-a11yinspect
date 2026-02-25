@@ -8,12 +8,12 @@ module.exports = {
     },
     messages: {
       linkAccessibleName: "❌ [Critical] Link has no accessible name (2.4.4 A)",
-      linkTextOnlyUrl: "❌ Link text is only a URL",
-      linkMissingHrefAttribute: "❌ Link missing href attribute",
-      linkHrefEmpty: "❌ Link href is empty or #",
-      linkImgMissingAlt: "❌ img inside link missing alt attribute (1.1.1 A)",
-      linkSvgMissingAccessibleName: "❌ SVG inside link missing accessible name (aria-label, aria-labelledby, or title child) (1.1.1 A)",
-      roleLinkMissingTabindex: "❌ Element with role=\"link\" missing tabindex attribute (2.1.1 A)"
+      linkTextOnlyUrl: "❌ [Best Practice] Link text is only a URL (2.4.4 A)",
+      linkMissingHrefAttribute: "❌ [Blocker] Link missing href attribute (2.1.1 A)",
+      linkHrefEmpty: "❌ [Best Practice] Link href is empty or # (2.1.1 A)",
+      linkImgMissingAlt: "❌ [Critical] img inside link missing alt attribute (1.1.1 A)",
+      linkSvgMissingAccessibleName: "❌ [Major] SVG inside link missing accessible name (aria-label, aria-labelledby, or title child) (1.1.1 A)",
+      roleLinkMissingTabindex: "❌ [Major] Element with role=\"link\" missing tabindex attribute (2.1.1 A)"
     },
     schema: []
   },

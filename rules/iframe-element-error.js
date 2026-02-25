@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      iframeMissingTitle: "❌ iframe missing title attribute",
-      iframeEmptyTitle: "❌ iframe has empty title attribute"
+      iframeMissingTitle: "❌ [Minor] iframe missing title attribute (4.1.2 A)",
+      iframeEmptyTitle: "❌ [Minor] iframe has empty title attribute (4.1.2 A)"
     },
     schema: []
   },

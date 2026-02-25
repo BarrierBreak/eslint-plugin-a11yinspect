@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      disabledElementTabOrder: "⚠️ Disabled element should not be in tab order",
-      ariaDisabledTrueFalse: "⚠️ aria-disabled should be true or false"
+      disabledElementTabOrder: "⚠️ [Minor] Disabled element should not be in tab order (2.4.3 A)",
+      ariaDisabledTrueFalse: "⚠️ [Major] aria-disabled should be true or false (4.1.2 A)"
     },
     schema: []
   },

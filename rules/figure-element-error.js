@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      figureMissingFigcaption: "❌ figure missing figcaption"
+      figureMissingFigcaption: "❌ [Minor] figure missing figcaption (1.1.1 A)"
     },
     schema: []
   },

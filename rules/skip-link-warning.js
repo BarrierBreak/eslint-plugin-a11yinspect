@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      pageHaveSkipLink: "⚠️ Page should have skip link"
+      pageHaveSkipLink: "💡 [Best Practice] Page should have skip link (2.4.1 A)"
     },
     schema: []
   },

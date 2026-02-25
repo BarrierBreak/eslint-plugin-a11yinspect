@@ -7,11 +7,11 @@ module.exports = {
       recommended: true
     },
     messages: {
-      menuItemRadioMissingAccessibleName: "❌ menuitemradio missing accessible name (aria-label or aria-labelledby) (4.1.2 A)",
-      menuItemCheckboxMissingAccessibleName: "❌ menuitemcheckbox missing accessible name (aria-label or aria-labelledby) (4.1.2 A)",
-      menuItemRadioMissingAriaChecked: "❌ menuitemradio missing aria-checked attribute (4.1.2 A)",
-      menuItemCheckboxMissingAriaChecked: "❌ menuitemcheckbox missing aria-checked attribute (4.1.2 A)",
-      menubarMissingAccessibleName: "❌ menubar missing accessible name (aria-label or aria-labelledby) (4.1.2 A)"
+      menuItemRadioMissingAccessibleName: "❌ [Major] menuitemradio missing accessible name (aria-label or aria-labelledby) (4.1.2 A)",
+      menuItemCheckboxMissingAccessibleName: "❌ [Major] menuitemcheckbox missing accessible name (aria-label or aria-labelledby) (4.1.2 A)",
+      menuItemRadioMissingAriaChecked: "❌ [Major] menuitemradio missing aria-checked attribute (4.1.2 A)",
+      menuItemCheckboxMissingAriaChecked: "❌ [Major] menuitemcheckbox missing aria-checked attribute (4.1.2 A)",
+      menubarMissingAccessibleName: "❌ [Major] menubar missing accessible name (aria-label or aria-labelledby) (4.1.2 A)"
     },
     schema: []
   },

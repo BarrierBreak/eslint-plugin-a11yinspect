@@ -10,8 +10,8 @@ module.exports = {
       imgMissingAlt: "❌ [Critical] img missing alt attribute (1.1.1 A)",
       imgEmptyAlt: "❌ [Critical] img has empty alt (1.1.1 A)",
       imgMissingAltNoAria: "❌ [Critical] img missing alt attribute and has no aria-label or aria-labelledby (1.1.1 A)",
-      imgRoleImgAriaHidden: "❌ img with role=\"img\" has aria-hidden=true — use role=\"presentation\" or role=\"none\" instead",
-      iconMissingAccessibleName: "❌ Icon element (<i>) with role=\"img\" missing accessible name (aria-label or aria-labelledby) (1.1.1 A)"
+      imgRoleImgAriaHidden: "❌ [Major] img with role=\"img\" has aria-hidden=true — use role=\"presentation\" or role=\"none\" instead (1.1.1 A)",
+      iconMissingAccessibleName: "❌ [Major] Icon element (<i>) with role=\"img\" missing accessible name (aria-label or aria-labelledby) (1.1.1 A)"
     },
     schema: []
   },

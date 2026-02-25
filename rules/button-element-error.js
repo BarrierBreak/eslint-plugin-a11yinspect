@@ -8,14 +8,14 @@ module.exports = {
     },
     messages: {
       buttonAccessibleName: "❌ [Critical] Button has no accessible name (4.1.2 A)",
-      buttonSvgMissingRoleImg: "❌ SVG inside button missing role=\"img\" attribute",
-      buttonSvgHiddenFromAT: "❌ SVG inside button with role=\"presentation\"/\"none\" or aria-hidden=true hides content from assistive technology",
-      buttonSvgMissingLabel: "❌ SVG inside button with role=\"img\" missing accessible name (aria-label or aria-labelledby) (1.1.1 A)",
-      buttonImgMissingAlt: "❌ img inside button missing alt attribute (1.1.1 A)",
-      buttonImgEmptyAlt: "❌ img inside button has empty or whitespace-only alt attribute (1.1.1 A)",
-      buttonIconHiddenFromAT: "❌ Icon element inside button with role=\"presentation\"/\"none\" or aria-hidden=true hides content from assistive technology",
-      buttonIconMissingRole: "❌ Icon element inside button missing role=\"img\" attribute",
-      buttonIconMissingLabel: "❌ Icon element inside button with role=\"img\" missing accessible name (aria-label or aria-labelledby)",
+      buttonSvgMissingRoleImg: "❌ [Best Practice] SVG inside button missing role=\"img\" attribute (4.1.2 A)",
+      buttonSvgHiddenFromAT: "❌ [Major] SVG inside button with role=\"presentation\"/\"none\" or aria-hidden=true hides content from assistive technology (4.1.2 A)",
+      buttonSvgMissingLabel: "❌ [Major] SVG inside button with role=\"img\" missing accessible name (aria-label or aria-labelledby) (1.1.1 A)",
+      buttonImgMissingAlt: "❌ [Critical] img inside button missing alt attribute (1.1.1 A)",
+      buttonImgEmptyAlt: "❌ [Major] img inside button has empty or whitespace-only alt attribute (1.1.1 A)",
+      buttonIconHiddenFromAT: "❌ [Major] Icon element inside button with role=\"presentation\"/\"none\" or aria-hidden=true hides content from assistive technology (4.1.2 A)",
+      buttonIconMissingRole: "❌ [Major] Icon element inside button missing role=\"img\" attribute (4.1.2 A)",
+      buttonIconMissingLabel: "❌ [Major] Icon element inside button with role=\"img\" missing accessible name (aria-label or aria-labelledby) (4.1.2 A)",
       buttonImgSvgIconGenericLabel: "❌ [Minor] Image, SVG or icon inside button has a generic accessible name (1.1.1 A)"
     },
     schema: []

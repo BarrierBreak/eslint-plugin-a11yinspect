@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      detailsAriaHidden: "⚠️ details element with aria-hidden=true hides its content from assistive technology"
+      detailsAriaHidden: "⚠️ [Major] details element with aria-hidden=true hides its content from assistive technology (4.1.2 A)"
     },
     schema: []
   },

@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      labelMissingAttribute: "❌ Label missing for attribute",
-      labelTextContent: "❌ Label has no text content"
+      labelMissingAttribute: "❌ [Major] Label missing for attribute (1.3.1 A)",
+      labelTextContent: "❌ [Critical] Label has no text content (4.1.2 A)"
     },
     schema: []
   },

@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      roleMissingRequiredProp: "❌ Role requires aria property that is missing"
+      roleMissingRequiredProp: "❌ [Major] Role requires aria property that is missing (4.1.2 A)"
     },
     schema: []
   },

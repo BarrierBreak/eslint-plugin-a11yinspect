@@ -7,7 +7,7 @@ module.exports = {
       recommended: true
     },
     messages: {
-      noAutofocus: "⚠️ Avoid using autoFocus - it can disorient screen reader users"
+      noAutofocus: "⚠️ [Critical] Avoid using autoFocus - it can disorient screen reader users (2.4.3 A)"
     },
     schema: []
   },

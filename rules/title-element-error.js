@@ -7,8 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      pageMissingTitleElement: "❌ Page missing title element",
-      titleElementEmpty: "❌ title element is empty"
+      pageMissingTitleElement: "❌ [Major] Page missing title element (2.4.2 A)",
+      titleElementEmpty: "❌ [Major] title element is empty (2.4.2 A)"
     },
     schema: []
   },
