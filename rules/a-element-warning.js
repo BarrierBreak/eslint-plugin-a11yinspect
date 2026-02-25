@@ -8,7 +8,8 @@ module.exports = {
     },
     messages: {
       linkTextGenericClickHere: "⚠️ [Critical] Link text is generic (click here, read more, etc) (2.4.4 A)",
-      linkTextTooLong: "⚠️ [Best Practice] Link accessible name exceeds 150 characters (2.4.4 A)"
+      linkTextTooLong: "⚠️ [Best Practice] Link accessible name exceeds 150 characters (2.4.4 A)",
+      linkTabindexNegative: "⚠️ Link has tabindex=-1 making it unreachable by keyboard navigation (2.1.1 A)"
     },
     schema: []
   },
@@ -29,6 +30,19 @@ module.exports = {
     return {
       JSXOpeningElement(node) {
         if (node.name.name !== "a") return;
+
+        const tabindexAttr = node.attributes.find(
+          attr => attr.type === "JSXAttribute" && (attr.name.name === "tabIndex" || attr.name.name === "tabindex")
+        );
+        if (tabindexAttr && tabindexAttr.value) {
+          let val = null;
+          if (tabindexAttr.value.type === "Literal") val = tabindexAttr.value.value;
+          else if (tabindexAttr.value.type === "JSXExpressionContainer" &&
+                   tabindexAttr.value.expression.type === "Literal") val = tabindexAttr.value.expression.value;
+          if (val !== null && parseInt(val, 10) === -1) {
+            context.report({ node: tabindexAttr, messageId: "linkTabindexNegative" });
+          }
+        }
 
         const hrefAttr = node.attributes.find(
           attr => attr.type === "JSXAttribute" && attr.name.name === "href"

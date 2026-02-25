@@ -7,7 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      tableSummaryCaptionMatch: "💡 Table summary attribute text matches caption text (should differ)"
+      tableSummaryCaptionMatch: "💡 Table summary attribute text matches caption text (should differ)",
+      tableRolePresentation: "⚠️ table element has role=\"none\" or \"presentation\" — verify this is a layout table and not a data table (1.3.1 A)"
     },
     schema: []
   },
@@ -34,6 +35,14 @@ module.exports = {
     return {
       JSXOpeningElement(node) {
         if (node.name.name !== "table") return;
+
+        const roleAttr = node.attributes.find(
+          attr => attr.type === "JSXAttribute" && attr.name.name === "role"
+        );
+        if (roleAttr && roleAttr.value && roleAttr.value.type === "Literal" &&
+            (roleAttr.value.value === "none" || roleAttr.value.value === "presentation")) {
+          context.report({ node: roleAttr, messageId: "tableRolePresentation" });
+        }
 
         const summaryAttr = node.attributes.find(
           attr => attr.type === "JSXAttribute" && attr.name.name === "summary"

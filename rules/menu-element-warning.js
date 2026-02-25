@@ -34,6 +34,8 @@ module.exports = {
         const roleAttr = node.attributes.find(
           attr => attr.type === "JSXAttribute" && attr.name.name === "role"
         );
+        const role = roleAttr && roleAttr.value && roleAttr.value.type === "Literal"
+          ? roleAttr.value.value : null;
 
         if (node.name.name !== "menu" &&
             (!roleAttr || !roleAttr.value || roleAttr.value.type !== "Literal" ||

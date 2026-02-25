@@ -10,7 +10,8 @@ module.exports = {
       listInvalidChildren: "⚠️ ul/ol contains non-li children",
       listInvalidElement: "⚠️ Non-li element with text content nested directly in ul/ol",
       listRedundantRoleList: "💡 ul/ol element has redundant role=\"list\" (implicit default)",
-      listitemRedundantRole: "💡 li element has redundant role=\"listitem\" (implicit default)"
+      listitemRedundantRole: "💡 li element has redundant role=\"listitem\" (implicit default)",
+      listAriaHidden: "⚠️ List element or list item with aria-hidden=true is hidden from assistive technology"
     },
     schema: []
   },
@@ -43,6 +44,16 @@ module.exports = {
 
     return {
       JSXOpeningElement(node) {
+        if (node.name.name === "ul" || node.name.name === "ol" || node.name.name === "li") {
+          const ariaHiddenAttr = node.attributes.find(
+            attr => attr.type === "JSXAttribute" && attr.name.name === "aria-hidden"
+          );
+          if (ariaHiddenAttr && ariaHiddenAttr.value && ariaHiddenAttr.value.type === "Literal" &&
+              (ariaHiddenAttr.value.value === "true" || ariaHiddenAttr.value.value === true)) {
+            context.report({ node, messageId: "listAriaHidden" });
+          }
+        }
+
         if (node.name.name === "ul" || node.name.name === "ol") {
           const roleAttrList = node.attributes.find(
             attr => attr.type === "JSXAttribute" && attr.name.name === "role"

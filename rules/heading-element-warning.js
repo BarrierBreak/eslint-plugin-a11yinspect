@@ -10,7 +10,8 @@ module.exports = {
       multipleH1: "💡 [Best Practice] Multiple h1 elements on page (1.3.1 A)",
       headingOnlyImageNoAlt: "⚠️ Heading contains only image without alt",
       headingHiddenOrPresentation: "💡 Heading has role=presentation/none or aria-hidden=true",
-      headingTextTooLong: "⚠️ Heading text exceeds 120 characters or contains only special characters"
+      headingTextTooLong: "⚠️ Heading text exceeds 120 characters or contains only special characters",
+      headingRoleMissingAriaLevel: "💡 Element with role=\"heading\" missing aria-level attribute (1.3.1 A)"
     },
     schema: []
   },
@@ -54,7 +55,21 @@ module.exports = {
     return {
       JSXOpeningElement(node) {
         const headingMatch = /^h([1-6])$/.exec(node.name.name);
-        if (!headingMatch) return;
+        if (!headingMatch) {
+          const roleAttrCheck = node.attributes.find(
+            attr => attr.type === "JSXAttribute" && attr.name.name === "role"
+          );
+          if (roleAttrCheck && roleAttrCheck.value && roleAttrCheck.value.type === "Literal" &&
+              roleAttrCheck.value.value === "heading") {
+            const ariaLevelAttr = node.attributes.find(
+              attr => attr.type === "JSXAttribute" && attr.name.name === "aria-level"
+            );
+            if (!ariaLevelAttr) {
+              context.report({ node, messageId: "headingRoleMissingAriaLevel" });
+            }
+          }
+          return;
+        }
 
         const level = parseInt(headingMatch[1], 10);
 

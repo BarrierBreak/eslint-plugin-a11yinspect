@@ -10,7 +10,9 @@ module.exports = {
       imgAltFilename: "⚠️ [Major] img alt contains filename (1.1.1 A)",
       imgAltTooLong: "⚠️ [Major] img alt too long (>150 chars) (1.1.1 A)",
       imgDecorative: "💡 [Minor] img marked as decorative (role=presentation/none or aria-hidden=true) - verify if informative or decorative (1.1.1 A)",
-      imgAltGeneric: "⚠️ img alt text is generic (image, graphic, picture, photo, spacer, etc.)"
+      imgAltGeneric: "⚠️ img alt text is generic (image, graphic, picture, photo, spacer, etc.)",
+      imgMissingSrc: "⚠️ img element missing src attribute (1.1.1 A)",
+      iconMissingRoleImg: "⚠️ Icon element (<i>) missing role=\"img\" attribute (1.1.1 A)"
     },
     schema: []
   },
@@ -24,6 +26,26 @@ module.exports = {
 
     return {
       JSXOpeningElement(node) {
+        if (node.name.name === "i") {
+          const ariaHiddenAttr = node.attributes.find(
+            attr => attr.type === "JSXAttribute" && attr.name.name === "aria-hidden"
+          );
+          const isHidden = ariaHiddenAttr && ariaHiddenAttr.value &&
+            ariaHiddenAttr.value.type === "Literal" &&
+            (ariaHiddenAttr.value.value === "true" || ariaHiddenAttr.value.value === true);
+          if (!isHidden) {
+            const roleAttr = node.attributes.find(
+              attr => attr.type === "JSXAttribute" && attr.name.name === "role"
+            );
+            const roleValue = roleAttr && roleAttr.value && roleAttr.value.type === "Literal"
+              ? roleAttr.value.value : null;
+            if (roleValue !== "img" && roleValue !== "presentation" && roleValue !== "none") {
+              context.report({ node, messageId: "iconMissingRoleImg" });
+            }
+          }
+          return;
+        }
+
         if (node.name.name !== "img") return;
 
         const roleAttr = node.attributes.find(
@@ -42,6 +64,14 @@ module.exports = {
 
         if (isDecorative) {
           context.report({ node, messageId: "imgDecorative" });
+          return;
+        }
+
+        const srcAttr = node.attributes.find(
+          attr => attr.type === "JSXAttribute" && attr.name.name === "src"
+        );
+        if (!srcAttr) {
+          context.report({ node, messageId: "imgMissingSrc" });
           return;
         }
 

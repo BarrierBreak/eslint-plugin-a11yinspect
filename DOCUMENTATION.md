@@ -31,7 +31,7 @@
 | Dimension | Detail |
 |---|---|
 | Standards | WCAG 2.1 (A / AA), EN 301 549, ARIA 1.2 |
-| Total rules | **92** (split into `-error` and `-warning` variants) |
+| Total rules | **96** (split into `-error` and `-warning` variants) |
 | Analysis target | JSX/TSX AST nodes — no DOM, no runtime, no jsdom |
 | Framework support | React, Next.js, Vite, CRA, any JSX toolchain |
 | TypeScript | Full `.tsx` support (pair with `@typescript-eslint/parser`) |
@@ -62,10 +62,9 @@ new-plugin/
 ├── COMPLETE-CONFIG-GUIDE.md  # Copy-paste configuration guide for users
 ├── README.md                 # Public npm readme
 ├── DOCUMENTATION.md          # ← This file
-├── .github/
-│   └── workflows/
-│       └── publish.yml       # Automated npm publish on git tag push
-└── incomplete-rules.csv      # Tracking sheet for rules not yet implemented
+└── .github/
+    └── workflows/
+        └── publish.yml       # Automated npm publish on git tag push
 ```
 
 ### Key files explained
@@ -74,7 +73,6 @@ new-plugin/
 |---|---|
 | `index.js` | Imports every rule module, exports `{ rules, configs }`, and programmatically builds the four preset configs (`recommended`, `strict`, `errors-only`, `warnings-only`). |
 | `rules/*.js` | Each file is a self-contained ESLint rule. No shared helpers — intentionally zero coupling. |
-| `incomplete-rules.csv` | Internal spreadsheet tracking planned rules that are not yet written. Not shipped in the npm package. |
 
 ---
 
@@ -167,7 +165,7 @@ module.exports = {
 |---|---|
 | `schema: []` | All rules are option-free — no per-rule configuration. Severity is controlled at the config level. |
 | WCAG reference in messages | Error messages embed the relevant WCAG success criterion, e.g. `(1.1.1 A)`. |
-| Emoji prefix | `❌` for critical errors, no prefix or `⚠️` for warnings — improves scannability in editor output. |
+| Emoji prefix | `❌` for errors, `⚠️` for warnings, `💡` for notices/best practices — improves scannability in editor output. |
 | Guard-first pattern | Rules return early if the element tag doesn't match, keeping logic flat and readable. |
 | Attribute lookup | Always uses `Array.find()` against `node.attributes` — no helper abstractions. |
 
@@ -175,7 +173,7 @@ module.exports = {
 
 ## 5. Rule Catalogue
 
-92 rules organised by the category they cover.
+96 rules organised by the category they cover.
 
 ### Images & Media (9 rules)
 
@@ -287,18 +285,20 @@ module.exports = {
 | `table-element-warning` | warn | Table accessibility recommendations |
 | `scope-element-error` | error | `<th>` missing `scope` attribute |
 
-### Dialogs & Components (6 rules)
+### Dialogs & Components (8 rules)
 
 | Rule | Severity | What it checks |
 |---|---|---|
 | `dialog-element-error` | error | `<dialog>` element or `role="dialog/alertdialog"` missing accessible name (aria-label or aria-labelledby) |
 | `dialog-element-warning` | warn | Dialog accessibility improvements |
 | `details-element-error` | error | `<details>` missing `<summary>` child |
+| `details-element-warning` | warn | `<details>` with `aria-hidden=true` |
+| `menu-element-error` | error | `role="menuitemradio/menuitemcheckbox"` missing accessible name or `aria-checked`; `role="menubar"` missing accessible name |
 | `menu-element-warning` | warn | `role="menu"` missing accessible name or proper structure |
 | `tab-element-warning` | warn | `role="tab"`, `tablist`, `tabpanel` structure |
 | `distracting-element-error` | error | `<marquee>` and `<blink>` elements |
 
-### Semantic HTML (16 rules)
+### Semantic HTML (18 rules)
 
 | Rule | Severity | What it checks |
 |---|---|---|
@@ -315,8 +315,10 @@ module.exports = {
 | `progress-element-error` | error | `<progress>` missing accessible label |
 | `output-element-error` | error | `<output>` missing `for`/`htmlFor` association |
 | `object-element-error` | error | `<object>` missing `type` attribute or fallback content |
+| `object-element-warning` | warn | `<object>` with `aria-hidden=true` |
 | `embed-element-error` | error | `<embed>` missing accessible alternative |
-| `map-element-error` | error | `<map>` missing `name` attribute |
+| `map-element-error` | error | `<map>` missing `name` attribute or empty name |
+| `map-element-warning` | warn | `<map>` with `aria-hidden=true` |
 | `noscript-element-error` | error | `<noscript>` missing meaningful fallback content |
 
 ---
@@ -430,7 +432,6 @@ Add an entry to the appropriate category table in the "Accessibility Rules Overv
 - [ ] Rule file created in `rules/`
 - [ ] Rule registered in `index.js`
 - [ ] `README.md` updated with the new rule row
-- [ ] `incomplete-rules.csv` entry removed (if applicable)
 - [ ] Manually verified against a JSX test file with `npx eslint yourfile.jsx`
 
 ---
@@ -476,7 +477,7 @@ Controlled by the `files` array in `package.json`:
 "files": ["index.js", "rules/", "README.md", "LICENSE"]
 ```
 
-The following are **not** published: `.github/`, `.eslintrc.json`, `eslint.config.mjs`, `incomplete-rules.csv`, `COMPLETE-CONFIG-GUIDE.md`, `node_modules/`.
+The following are **not** published: `.github/`, `.eslintrc.json`, `eslint.config.mjs`, `COMPLETE-CONFIG-GUIDE.md`, `DOCUMENTATION.md`, `node_modules/`.
 
 ---
 

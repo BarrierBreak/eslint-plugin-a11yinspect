@@ -7,7 +7,8 @@ module.exports = {
       recommended: true
     },
     messages: {
-      modalDialogTrapFocus: "⚠️ Modal dialog should trap focus"
+      modalDialogTrapFocus: "⚠️ Modal dialog should trap focus",
+      dialogAriaHidden: "⚠️ dialog/alertdialog element with aria-hidden=true is hidden from assistive technology"
     },
     schema: []
   },
@@ -21,6 +22,16 @@ module.exports = {
         const role = roleAttr && roleAttr.value && roleAttr.value.type === "Literal"
           ? roleAttr.value.value
           : null;
+
+        if (node.name.name === "dialog" || role === "dialog" || role === "alertdialog") {
+          const ariaHiddenAttr = node.attributes.find(
+            attr => attr.type === "JSXAttribute" && attr.name.name === "aria-hidden"
+          );
+          if (ariaHiddenAttr && ariaHiddenAttr.value && ariaHiddenAttr.value.type === "Literal" &&
+              (ariaHiddenAttr.value.value === "true" || ariaHiddenAttr.value.value === true)) {
+            context.report({ node, messageId: "dialogAriaHidden" });
+          }
+        }
 
         if (role === "dialog" || role === "alertdialog") {
           const ariaModal = node.attributes.find(

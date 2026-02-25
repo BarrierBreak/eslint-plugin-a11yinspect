@@ -11,7 +11,11 @@ module.exports = {
       tableMissingTh: "❌ Table missing th elements",
       tableMissingHeaders: "❌ Table missing column/row headers (no th, role=columnheader, or role=rowheader)",
       tableEmptyHeader: "❌ Empty table header (th with no content)",
-      tableMissingCaption: "❌ Table missing caption element"
+      tableMissingCaption: "❌ Table missing caption element",
+      tdMissingTrParent: "❌ td element is not inside a tr element (1.3.1 A)",
+      thMissingTrParent: "❌ th element is not inside a tr element (1.3.1 A)",
+      trMissingTableParent: "❌ tr element is not inside a table, thead, tbody, or tfoot element (1.3.1 A)",
+      tableDeprecatedSummary: "❌ table summary attribute is deprecated — use caption element or aria-label instead"
     },
     schema: []
   },
@@ -85,6 +89,26 @@ module.exports = {
 
     return {
       JSXOpeningElement(node) {
+        const tagName = node.name.name;
+
+        if (tagName === "td" || tagName === "th") {
+          const directParent = node.parent;
+          const parentTag = directParent && directParent.type === "JSXElement"
+            ? directParent.openingElement.name.name : null;
+          if (parentTag !== "tr") {
+            context.report({ node, messageId: tagName === "td" ? "tdMissingTrParent" : "thMissingTrParent" });
+          }
+        }
+
+        if (tagName === "tr") {
+          const directParent = node.parent;
+          const parentTag = directParent && directParent.type === "JSXElement"
+            ? directParent.openingElement.name.name : null;
+          if (!["table", "thead", "tbody", "tfoot"].includes(parentTag)) {
+            context.report({ node, messageId: "trMissingTableParent" });
+          }
+        }
+
         if (node.name.name !== "table") return;
 
         const ariaLabel = node.attributes.find(
@@ -95,6 +119,10 @@ module.exports = {
         const summaryAttr = node.attributes.find(
           attr => attr.type === "JSXAttribute" && attr.name.name === "summary"
         );
+
+        if (summaryAttr) {
+          context.report({ node: summaryAttr, messageId: "tableDeprecatedSummary" });
+        }
 
         const parent = node.parent;
         if (parent.type === "JSXElement") {

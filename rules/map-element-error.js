@@ -8,7 +8,8 @@ module.exports = {
     },
     messages: {
       mapMissingNameAttribute: "❌ map missing name attribute",
-      mapAreaChildren: "❌ map has no area children"
+      mapAreaChildren: "❌ map has no area children",
+      mapEmptyNameAttribute: "❌ map name attribute is empty"
     },
     schema: []
   },
@@ -29,6 +30,9 @@ module.exports = {
 
         if (!nameAttr) {
           context.report({ node, messageId: "mapMissingNameAttribute" });
+        } else if (nameAttr.value && nameAttr.value.type === "Literal" &&
+                   typeof nameAttr.value.value === "string" && nameAttr.value.value.trim() === "") {
+          context.report({ node: nameAttr, messageId: "mapEmptyNameAttribute" });
         }
 
         const parent = node.parent;

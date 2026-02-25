@@ -8,17 +8,38 @@ module.exports = {
     },
     messages: {
       landmarkMissingAccessibleName: "⚠️ [Minor] Landmark missing accessible name (1.3.1 A)",
-      multipleMainLandmarksFound: "💡 Multiple main landmarks found"
+      multipleMainLandmarksFound: "💡 Multiple main landmarks found",
+      landmarkAriaHidden: "⚠️ Landmark element with aria-hidden=true is hidden from assistive technology (1.3.1 A)"
     },
     schema: []
   },
   create(context) {
     const landmarksWithMultiple = ["navigation", "complementary", "region"];
+    const landmarkTags = new Set(["header", "main", "nav", "footer", "aside", "section", "form"]);
+    const landmarkRoles = new Set(["banner", "main", "navigation", "contentinfo", "complementary", "region", "search", "form"]);
     let mainCount = 0;
     let navFound = false;
 
     return {
       JSXOpeningElement(node) {
+        const tagName = node.name.name;
+        const roleAttrCheck = node.attributes.find(
+          attr => attr.type === "JSXAttribute" && attr.name.name === "role"
+        );
+        const roleValueCheck = roleAttrCheck && roleAttrCheck.value && roleAttrCheck.value.type === "Literal"
+          ? roleAttrCheck.value.value : null;
+
+        const isLandmark = landmarkTags.has(tagName) || (roleValueCheck && landmarkRoles.has(roleValueCheck));
+        if (isLandmark) {
+          const ariaHiddenAttr = node.attributes.find(
+            attr => attr.type === "JSXAttribute" && attr.name.name === "aria-hidden"
+          );
+          if (ariaHiddenAttr && ariaHiddenAttr.value && ariaHiddenAttr.value.type === "Literal" &&
+              (ariaHiddenAttr.value.value === "true" || ariaHiddenAttr.value.value === true)) {
+            context.report({ node, messageId: "landmarkAriaHidden" });
+          }
+        }
+
         const roleAttr = node.attributes.find(
           attr => attr.type === "JSXAttribute" && attr.name.name === "role"
         );

@@ -22,6 +22,7 @@ module.exports = {
     return {
       JSXOpeningElement(node) {
         if (node.name.name === "details") {
+
           const parent = node.parent;
           if (parent.type === "JSXElement" && parent.children) {
             if (!hasSummary(parent.children)) {

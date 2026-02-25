@@ -65,7 +65,16 @@ module.exports = {
               context.report({ node: tabindexAttr, messageId: "positiveTabindexValueFound" });
             }
 
-            if (numValue === 0 || numValue === -1) {
+            if (numValue === 0) {
+              if (!nativeFocusable.has(tagName)) {
+                const roleAttr = getAttr(node, "role");
+                if (!roleAttr) {
+                  context.report({ node: tabindexAttr, messageId: "elementTabindexButRole" });
+                }
+              }
+            }
+
+            if (numValue === -1) {
               const roleAttr = getAttr(node, "role");
               if (!roleAttr && !nativeFocusable.has(tagName)) {
                 context.report({ node: tabindexAttr, messageId: "elementTabindexButRole" });
